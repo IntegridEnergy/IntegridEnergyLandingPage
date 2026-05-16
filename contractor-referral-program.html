@@ -1114,7 +1114,162 @@ font-weight:800;
       }
     }
 
-  </style>
+  
+    .sticky-mobile-cta {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      padding: 9px;
+      background: rgba(6, 27, 70, .94);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 -16px 34px rgba(0,0,0,.20);
+      gap: 8px;
+    }
+
+    .sticky-mobile-cta a {
+      flex: 1;
+      min-height: 52px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      font-size: .9rem;
+      line-height: 1.05;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+
+    .sticky-mobile-cta .cta-call {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+    }
+
+    .sticky-mobile-cta .cta-quote {
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+    }
+
+    .sticky-mobile-cta .cta-email {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+
+    @media (max-width: 920px) {
+      body {
+        padding-bottom: 84px;
+      }
+
+      .sticky-mobile-cta {
+        display: flex;
+      }
+    }
+
+  
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      min-height: 86px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex: 1;
+      flex-wrap: nowrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 4px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      width: 0%;
+      height: 2px;
+      background: var(--orange);
+      transition: width .25s ease, left .25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 220px;
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+
+    .dark-toggle {
+      min-width: 132px;
+      justify-content: center;
+    }
+
+    .section-title,
+    .hero h1,
+    .quote-info h2 {
+      text-wrap: balance;
+    }
+
+    .trust-grid,
+    .industries-grid,
+    .city-grid {
+      align-items: stretch;
+    }
+
+    .trust-card,
+    .industry-card,
+    .city-card,
+    .seo-card {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .trust-card:hover,
+    .industry-card:hover,
+    .city-card:hover,
+    .seo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0,71,171,.12);
+    }
+
+    @media (max-width: 1100px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: .93rem;
+      }
+    }
+
+
+</style>
 
   <!-- Local business structured data for Google -->
   <script type="application/ld+json">
@@ -1418,6 +1573,13 @@ font-weight:800;
       });
     });
   </script>
+
+
+  <div class="sticky-mobile-cta" aria-label="Quick contact actions">
+    <a class="cta-call" href="tel:+19568845953">Call<br>Llamar</a>
+    <a class="cta-quote" href="index.html#quote">Get Quote<br>Cotización</a>
+    <a class="cta-email" href="mailto:info@integridenergy.com">Email<br>Correo</a>
+  </div>
 
 </body>
 </html>
