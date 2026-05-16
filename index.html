@@ -1306,80 +1306,186 @@ font-weight:800;
     }
 
 
-    /* Calculator + Quote separation refinement */
+    
+
+
+    /* Clean horizontal calculator layout */
     .calculator-section {
-      padding: 82px 0 64px !important;
+      padding: 76px 0 50px !important;
       background:
-        radial-gradient(circle at 10% 12%, rgba(0,71,171,.08), transparent 28%),
-        radial-gradient(circle at 90% 80%, rgba(255,107,0,.10), transparent 30%),
+        radial-gradient(circle at 12% 12%, rgba(0,71,171,.06), transparent 28%),
+        radial-gradient(circle at 92% 78%, rgba(255,107,0,.08), transparent 30%),
         var(--soft);
     }
 
-    .quote-form-section {
-      padding: 82px 0 !important;
-      margin-top: 0 !important;
-      background:
-        linear-gradient(180deg, rgba(0,71,171,.06), rgba(255,255,255,0)),
-        var(--soft);
-      border-top: 1px solid var(--border);
+    .calculator-section > .container > p,
+    .calculator-section > .container > h2 {
+      max-width: 900px;
     }
 
-    .calculator-section .section-title,
-    .quote-form-section .section-title {
-      max-width: 820px;
+    .calculator-box {
+      display: grid !important;
+      grid-template-columns: 1.1fr .9fr !important;
+      gap: 22px !important;
+      align-items: stretch !important;
+      margin-top: 28px !important;
     }
 
-    .calculator-box,
-    .quote-form-wrap {
-      margin-top: 34px;
+    .calculator-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px !important;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: end;
+      min-height: auto !important;
     }
 
-    .calculator-card,
-    .calculator-result,
-    .quote-info,
-    .lead-form-card {
-      min-height: 100%;
+    .calculator-card label {
+      display: grid;
+      gap: 9px;
+      margin: 0 !important;
+      font-size: .92rem;
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--blue);
+    }
+
+    .calculator-card label span {
+      display: block;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: .82rem;
+      margin-top: 2px;
+    }
+
+    .calculator-card input {
+      width: 100%;
+      min-height: 56px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font: inherit;
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #10203f;
+      background: white;
+      box-shadow: inset 0 1px 0 rgba(0,0,0,.02);
+    }
+
+    .calculator-card input:focus {
+      outline: none;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 4px rgba(255,107,0,.13);
+    }
+
+    .calculator-result {
+      background: linear-gradient(135deg, var(--blue), var(--blue-3));
+      color: white;
+      border-radius: 22px;
+      padding: 26px !important;
+      box-shadow: var(--shadow);
+      min-height: auto !important;
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .calculator-result p {
+      margin: 0;
+      color: rgba(255,255,255,.92);
+      font-size: .92rem;
+      line-height: 1.45;
+    }
+
+    .calculator-result strong {
+      display: block;
+      font-size: clamp(2rem, 4vw, 3.1rem) !important;
+      line-height: 1;
+      margin: 8px 0 0 !important;
+      color: #fff;
+      letter-spacing: -.04em;
+    }
+
+    .calculator-result #calc-annual {
+      margin-top: 8px !important;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .calculator-result small {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.75);
+      font-size: .78rem;
+      line-height: 1.4;
+    }
+
+    .calculator-result .actions {
+      margin: 0 !important;
+    }
+
+    .calculator-result .btn {
+      min-width: 150px;
+      min-height: 58px;
+      text-align: center;
+      border-radius: 12px;
+      line-height: 1.2;
     }
 
     .section-divider {
       width: min(1120px, 92%);
       height: 1px;
       margin: 0 auto;
-      background: linear-gradient(90deg, transparent, rgba(0,71,171,.22), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0,71,171,.18), transparent);
+    }
+
+    .quote-form-section {
+      padding-top: 64px !important;
     }
 
     @media (max-width: 920px) {
-      .calculator-section,
-      .quote-form-section {
-        padding: 56px 0 !important;
+      .calculator-section {
+        padding: 54px 0 34px !important;
       }
 
-      .calculator-box,
-      .quote-form-wrap {
-        margin-top: 24px;
-        gap: 20px !important;
+      .calculator-box {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
       }
 
-      .calculator-card,
-      .calculator-result,
-      .quote-info,
-      .lead-form-card {
-        border-radius: 20px !important;
-        padding: 24px !important;
+      .calculator-card {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+        padding: 22px !important;
+      }
+
+      .calculator-card input {
+        min-height: 52px;
+        font-size: 16px;
+      }
+
+      .calculator-result {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+        padding: 22px !important;
       }
 
       .calculator-result strong {
-        font-size: 2.35rem !important;
+        font-size: 2.6rem !important;
       }
 
-      .quote-info h2 {
-        font-size: 2.1rem !important;
+      .calculator-result .btn {
+        width: 100%;
       }
 
-      .lead-form-card input,
-      .lead-form-card select,
-      .lead-form-card textarea {
-        font-size: 16px;
+      .quote-form-section {
+        padding-top: 50px !important;
       }
     }
 
@@ -1683,7 +1789,56 @@ font-weight:800;
     </section>
 
 
-    <section class="quote-form-section" id="quote">
+    <section class="calculator-section" id="calculator">
+      <div class="container">
+        <p class="section-kicker">Commercial Savings Tool / Herramienta Comercial</p>
+        <h2 class="section-title">Estimate your commercial electricity savings in seconds.</h2>
+        <p>Your current electricity rate may be costing your business more than necessary. Use this quick estimate, then send us your bill for a full comparison.</p>
+
+        <div class="calculator-box">
+          <div class="calculator-card">
+            <label>
+              Monthly Usage
+              <span>Uso Mensual (kWh)</span>
+              <input id="calc-usage" type="number" value="25000" min="0" inputmode="decimal">
+            </label>
+
+            <label>
+              Current Rate
+              <span>Tarifa Actual (¢/kWh)</span>
+              <input id="calc-rate" type="number" value="10.5" min="0" step=".1" inputmode="decimal">
+            </label>
+
+            <label>
+              Estimated New Rate
+              <span>Nueva Tarifa Estimada (¢/kWh)</span>
+              <input id="calc-target" type="number" value="7.9" min="0" step=".1" inputmode="decimal">
+            </label>
+          </div>
+
+          <div class="calculator-result">
+            <div>
+              <p>Estimated Monthly Savings</p>
+              <strong id="calc-savings">$650</strong>
+            </div>
+
+            <div>
+              <p>Estimated Annual Savings</p>
+              <p id="calc-annual">$7,800</p>
+              <small>Estimate only. Final rates depend on usage, term, market conditions, meter type, and service area.</small>
+            </div>
+
+            <div class="actions">
+              <a class="btn btn-orange" href="#quote">Request Full Analysis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+<section class="quote-form-section" id="quote">
       <div class="container quote-form-wrap">
         <div class="quote-info">
           <p class="section-kicker" style="color:#ffb166;">Free Quote / Cotización Gratis</p>
@@ -1723,40 +1878,8 @@ font-weight:800;
             <div class="form-grid">
               <label>
                 Email / Correo
-            <section class="calculator-section" id="calculator">
-      <div class="container">
-        <p class="section-kicker">Commercial Savings Tool / Herramienta Comercial</p>
-        <h2 class="section-title">Estimate your commercial electricity savings in seconds.</h2>
-        <p>Your current electricity rate may be costing your business more than necessary. Use this quick estimate, then send us your bill for a full comparison.</p>
+            
 
-        <div class="calculator-box">
-          <div class="calculator-card">
-            <label>
-              Monthly Usage / Uso Mensual (kWh)
-              <input id="calc-usage" type="number" value="25000" min="0" inputmode="decimal">
-            </label>
-            <label>
-              Current Rate / Tarifa Actual (¢/kWh)
-              <input id="calc-rate" type="number" value="10.5" min="0" step=".1" inputmode="decimal">
-            </label>
-            <label>
-              Estimated New Rate / Nueva Tarifa Estimada (¢/kWh)
-              <input id="calc-target" type="number" value="7.9" min="0" step=".1" inputmode="decimal">
-            </label>
-          </div>
-
-          <div class="calculator-result">
-            <p>Estimated Monthly Savings</p>
-            <strong id="calc-savings">$0</strong><p id="calc-annual" style="font-weight:900;margin-top:-8px;">Estimated Annual Savings: $0</p>
-            <p>A simple comparison can reveal whether your current electricity plan is costing your business more than necessary.</p>
-            <small>Estimate only. Final rates depend on usage, term, market conditions, meter type, and service area.</small>
-            <div class="actions" style="margin-top:24px;">
-              <a class="btn btn-orange" href="#quote">Request Full Analysis</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <input type="email" name="email" placeholder="name@email.com" required>
               </label>
@@ -1939,11 +2062,17 @@ font-weight:800;
   </script>
 
 
+  <div class="sticky-mobile-cta" aria-label="Quick contact actions">
+    <a class="cta-call" href="tel:+19568845953">Call<br>Llamar</a>
+    <a class="cta-quote" href="index.html#quote">Get Quote<br>Cotización</a>
+    <a class="cta-email" href="mailto:info@integridenergy.com">Email<br>Correo</a>
+  </div>
+
+
   <script>
     (function () {
       function parseNumber(value) {
-        if (value === null || value === undefined) return 0;
-        return Number(String(value).replace(/[^0-9.]/g, "")) || 0;
+        return Number(String(value || "").replace(/[^0-9.]/g, "")) || 0;
       }
 
       function formatMoney(value) {
@@ -1966,7 +2095,6 @@ font-weight:800;
         var usage = parseNumber(usageInput.value);
         var currentRate = parseNumber(rateInput.value);
         var targetRate = parseNumber(targetInput.value);
-
         var monthlySavings = 0;
 
         if (usage > 0 && currentRate > 0 && targetRate > 0 && currentRate > targetRate) {
@@ -1974,33 +2102,21 @@ font-weight:800;
         }
 
         savingsOutput.textContent = formatMoney(monthlySavings);
-
-        if (annualOutput) {
-          annualOutput.textContent = "Estimated Annual Savings: " + formatMoney(monthlySavings * 12);
-        }
+        if (annualOutput) annualOutput.textContent = formatMoney(monthlySavings * 12);
       }
 
       document.addEventListener("DOMContentLoaded", function () {
         ["calc-usage", "calc-rate", "calc-target"].forEach(function (id) {
           var input = document.getElementById(id);
           if (!input) return;
-
           input.addEventListener("input", updateSavingsCalculator);
           input.addEventListener("change", updateSavingsCalculator);
           input.addEventListener("keyup", updateSavingsCalculator);
         });
-
         updateSavingsCalculator();
       });
     })();
   </script>
-
-
-  <div class="sticky-mobile-cta" aria-label="Quick contact actions">
-    <a class="cta-call" href="tel:+19568845953">Call<br>Llamar</a>
-    <a class="cta-quote" href="index.html#quote">Get Quote<br>Cotización</a>
-    <a class="cta-email" href="mailto:info@integridenergy.com">Email<br>Correo</a>
-  </div>
 
 </body>
 </html>
