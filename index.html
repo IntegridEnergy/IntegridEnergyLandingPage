@@ -1309,133 +1309,169 @@ font-weight:800;
     
 
 
-    /* Clean horizontal calculator layout */
+    
+    /* Redesigned savings calculator */
     .calculator-section {
-      padding: 76px 0 50px !important;
+      padding: 76px 0 58px !important;
       background:
-        radial-gradient(circle at 12% 12%, rgba(0,71,171,.06), transparent 28%),
-        radial-gradient(circle at 92% 78%, rgba(255,107,0,.08), transparent 30%),
+        radial-gradient(circle at 12% 10%, rgba(0,71,171,.08), transparent 28%),
+        radial-gradient(circle at 92% 80%, rgba(255,107,0,.10), transparent 30%),
         var(--soft);
     }
 
-    .calculator-section > .container > p,
-    .calculator-section > .container > h2 {
-      max-width: 900px;
+    .calculator-intro {
+      max-width: 860px;
+      margin-bottom: 28px;
     }
 
-    .calculator-box {
-      display: grid !important;
-      grid-template-columns: 1.1fr .9fr !important;
-      gap: 22px !important;
-      align-items: stretch !important;
-      margin-top: 28px !important;
+    .calculator-intro p {
+      max-width: 760px;
     }
 
-    .calculator-card {
+    .savings-tool {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .savings-inputs,
+    .savings-results {
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .savings-inputs {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 26px !important;
-      box-shadow: var(--shadow);
+      padding: 26px;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      align-items: end;
-      min-height: auto !important;
     }
 
-    .calculator-card label {
+    .input-group {
       display: grid;
-      gap: 9px;
-      margin: 0 !important;
-      font-size: .92rem;
-      font-weight: 900;
-      line-height: 1.25;
-      color: var(--blue);
+      gap: 8px;
     }
 
-    .calculator-card label span {
-      display: block;
+    .input-group label {
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 1.12rem;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+
+    body.dark .input-group label {
+      color: #8db5ff;
+    }
+
+    .input-group span {
       color: var(--muted);
       font-weight: 700;
-      font-size: .82rem;
-      margin-top: 2px;
+      font-size: .94rem;
     }
 
-    .calculator-card input {
-      width: 100%;
-      min-height: 56px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 12px 14px;
-      font: inherit;
-      font-size: 1.05rem;
-      font-weight: 900;
-      color: #10203f;
+    .field-wrap {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px;
       background: white;
-      box-shadow: inset 0 1px 0 rgba(0,0,0,.02);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 8px 12px;
+      transition: border-color .2s ease, box-shadow .2s ease;
     }
 
-    .calculator-card input:focus {
-      outline: none;
+    .field-wrap:focus-within {
       border-color: var(--orange);
-      box-shadow: 0 0 0 4px rgba(255,107,0,.13);
+      box-shadow: 0 0 0 4px rgba(255,107,0,.12);
     }
 
-    .calculator-result {
+    .field-wrap input {
+      width: 100%;
+      min-height: 52px;
+      border: 0 !important;
+      outline: 0 !important;
+      background: transparent !important;
+      color: #10203f;
+      font-size: 1.35rem;
+      font-weight: 900;
+      padding: 0;
+    }
+
+    .field-wrap strong {
+      color: var(--blue);
+      font-size: .86rem;
+      font-weight: 900;
+      background: rgba(0,71,171,.08);
+      border-radius: 999px;
+      padding: 7px 9px;
+      white-space: nowrap;
+    }
+
+    .savings-results {
       background: linear-gradient(135deg, var(--blue), var(--blue-3));
       color: white;
-      border-radius: 22px;
-      padding: 26px !important;
-      box-shadow: var(--shadow);
-      min-height: auto !important;
+      padding: 30px;
       display: grid;
-      grid-template-columns: 1fr 1fr auto;
-      gap: 22px;
-      align-items: center;
+      align-content: center;
+      gap: 20px;
+      min-height: 100%;
     }
 
-    .calculator-result p {
-      margin: 0;
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .result-block {
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .result-block span {
+      display: block;
+      color: rgba(255,255,255,.82);
+      font-weight: 800;
+      font-size: .98rem;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .result-block strong {
+      display: block;
+      color: #fff;
+      font-size: clamp(2.35rem, 5vw, 4.25rem);
+      line-height: .95;
+      letter-spacing: -.05em;
+      font-weight: 900;
+    }
+
+    .savings-results p {
       color: rgba(255,255,255,.92);
-      font-size: .92rem;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      margin: 0;
+      max-width: 760px;
+    }
+
+    .savings-results small {
+      color: rgba(255,255,255,.72);
+      font-size: .9rem;
       line-height: 1.45;
     }
 
-    .calculator-result strong {
-      display: block;
-      font-size: clamp(2rem, 4vw, 3.1rem) !important;
-      line-height: 1;
-      margin: 8px 0 0 !important;
-      color: #fff;
-      letter-spacing: -.04em;
-    }
-
-    .calculator-result #calc-annual {
-      margin-top: 8px !important;
-      font-size: 1.25rem;
-      font-weight: 900;
-      color: #fff;
-    }
-
-    .calculator-result small {
-      display: block;
-      margin-top: 8px;
-      color: rgba(255,255,255,.75);
-      font-size: .78rem;
-      line-height: 1.4;
-    }
-
-    .calculator-result .actions {
-      margin: 0 !important;
-    }
-
-    .calculator-result .btn {
-      min-width: 150px;
+    .savings-cta {
+      width: fit-content;
       min-height: 58px;
-      text-align: center;
-      border-radius: 12px;
-      line-height: 1.2;
+      border-radius: 14px;
+      padding: 0 28px;
+      font-size: 1rem;
     }
 
     .section-divider {
@@ -1445,174 +1481,33 @@ font-weight:800;
       background: linear-gradient(90deg, transparent, rgba(0,71,171,.18), transparent);
     }
 
-    .quote-form-section {
-      padding-top: 64px !important;
-    }
-
     @media (max-width: 920px) {
       .calculator-section {
-        padding: 54px 0 34px !important;
+        padding: 54px 0 38px !important;
       }
 
-      .calculator-box {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
+      .savings-tool,
+      .result-grid {
+        grid-template-columns: 1fr;
       }
 
-      .calculator-card {
-        grid-template-columns: 1fr !important;
-        gap: 14px;
-        padding: 22px !important;
+      .savings-inputs,
+      .savings-results {
+        border-radius: 20px;
+        padding: 22px;
       }
 
-      .calculator-card input {
-        min-height: 52px;
-        font-size: 16px;
+      .field-wrap input {
+        font-size: 1.2rem;
+        min-height: 48px;
       }
 
-      .calculator-result {
-        grid-template-columns: 1fr !important;
-        gap: 16px;
-        padding: 22px !important;
+      .result-block strong {
+        font-size: 3rem;
       }
 
-      .calculator-result strong {
-        font-size: 2.6rem !important;
-      }
-
-      .calculator-result .btn {
+      .savings-cta {
         width: 100%;
-      }
-
-      .quote-form-section {
-        padding-top: 50px !important;
-      }
-    }
-
-
-    /* Calculator proportion + visibility refinement */
-    .calculator-box {
-      grid-template-columns: .95fr 2.05fr !important;
-      gap: 26px !important;
-      align-items: stretch !important;
-    }
-
-    .calculator-card {
-      padding: 34px !important;
-      gap: 24px !important;
-      align-content: center;
-    }
-
-    .calculator-card label {
-      font-size: 1.18rem !important;
-      line-height: 1.3 !important;
-      letter-spacing: -.02em;
-    }
-
-    .calculator-card label span {
-      font-size: 1rem !important;
-      margin-top: 8px !important;
-      line-height: 1.35 !important;
-    }
-
-    .calculator-card input {
-      min-height: 68px !important;
-      font-size: 1.6rem !important;
-      font-weight: 900 !important;
-      border-radius: 18px !important;
-      margin-top: 10px;
-    }
-
-    .calculator-result {
-      grid-template-columns: 1.1fr .9fr auto !important;
-      gap: 34px !important;
-      padding: 38px !important;
-    }
-
-    .calculator-result p {
-      font-size: 1.25rem !important;
-      line-height: 1.45 !important;
-    }
-
-    .calculator-result strong {
-      font-size: clamp(4rem, 7vw, 6rem) !important;
-      margin-top: 12px !important;
-      line-height: .95 !important;
-    }
-
-    .calculator-result #calc-annual {
-      font-size: 2.35rem !important;
-      line-height: 1.05 !important;
-      margin-top: 14px !important;
-    }
-
-    .calculator-result small {
-      font-size: 1rem !important;
-      line-height: 1.6 !important;
-      display: block;
-      margin-top: 18px !important;
-      max-width: 280px;
-    }
-
-    .calculator-result .btn {
-      min-width: 280px !important;
-      min-height: 76px !important;
-      font-size: 1.45rem !important;
-      border-radius: 18px !important;
-      padding: 18px 26px !important;
-    }
-
-    @media (max-width: 920px) {
-      .calculator-box {
-        grid-template-columns: 1fr !important;
-      }
-
-      .calculator-card {
-        grid-template-columns: 1fr !important;
-        padding: 24px !important;
-      }
-
-      .calculator-card label {
-        font-size: 1rem !important;
-      }
-
-      .calculator-card label span {
-        font-size: .92rem !important;
-      }
-
-      .calculator-card input {
-        min-height: 56px !important;
-        font-size: 1.25rem !important;
-      }
-
-      .calculator-result {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-        padding: 28px !important;
-      }
-
-      .calculator-result p {
-        font-size: 1rem !important;
-      }
-
-      .calculator-result strong {
-        font-size: 3.2rem !important;
-      }
-
-      .calculator-result #calc-annual {
-        font-size: 1.6rem !important;
-      }
-
-      .calculator-result .btn {
-        width: 100%;
-        min-width: 0 !important;
-        font-size: 1.15rem !important;
-        min-height: 62px !important;
-      }
-
-      .calculator-result small {
-        max-width: none;
-        font-size: .92rem !important;
       }
     }
 
@@ -1916,48 +1811,62 @@ font-weight:800;
     </section>
 
 
-    <section class="calculator-section" id="calculator">
+    
+<section class="calculator-section" id="calculator">
       <div class="container">
-        <p class="section-kicker">Commercial Savings Tool / Herramienta Comercial</p>
-        <h2 class="section-title">Estimate your commercial electricity savings in seconds.</h2>
-        <p>Your current electricity rate may be costing your business more than necessary. Use this quick estimate, then send us your bill for a full comparison.</p>
+        <div class="calculator-intro">
+          <p class="section-kicker">Commercial Savings Tool / Herramienta Comercial</p>
+          <h2 class="section-title">Estimate your commercial electricity savings.</h2>
+          <p>Enter your monthly usage and current rate to get a quick estimate. For accurate pricing, send us your bill for a full comparison.</p>
+        </div>
 
-        <div class="calculator-box">
-          <div class="calculator-card">
-            <label>
-              Monthly Usage
-              <span>Uso Mensual (kWh)</span>
-              <input id="calc-usage" type="number" value="25000" min="0" inputmode="decimal">
-            </label>
+        <div class="savings-tool">
+          <div class="savings-inputs">
+            <div class="input-group">
+              <label for="calc-usage">Monthly Usage</label>
+              <span>Uso mensual en kWh</span>
+              <div class="field-wrap">
+                <input id="calc-usage" type="number" value="25000" min="0" inputmode="decimal">
+                <strong>kWh</strong>
+              </div>
+            </div>
 
-            <label>
-              Current Rate
-              <span>Tarifa Actual (¢/kWh)</span>
-              <input id="calc-rate" type="number" value="10.5" min="0" step=".1" inputmode="decimal">
-            </label>
+            <div class="input-group">
+              <label for="calc-rate">Current Rate</label>
+              <span>Tarifa actual</span>
+              <div class="field-wrap">
+                <input id="calc-rate" type="number" value="10.5" min="0" step=".1" inputmode="decimal">
+                <strong>¢/kWh</strong>
+              </div>
+            </div>
 
-            <label>
-              Estimated New Rate
-              <span>Nueva Tarifa Estimada (¢/kWh)</span>
-              <input id="calc-target" type="number" value="7.9" min="0" step=".1" inputmode="decimal">
-            </label>
+            <div class="input-group">
+              <label for="calc-target">Estimated New Rate</label>
+              <span>Nueva tarifa estimada</span>
+              <div class="field-wrap">
+                <input id="calc-target" type="number" value="7.9" min="0" step=".1" inputmode="decimal">
+                <strong>¢/kWh</strong>
+              </div>
+            </div>
           </div>
 
-          <div class="calculator-result">
-            <div>
-              <p>Estimated Monthly Savings</p>
-              <strong id="calc-savings">$650</strong>
+          <div class="savings-results">
+            <div class="result-grid">
+              <div class="result-block">
+                <span>Estimated Monthly Savings</span>
+                <strong id="calc-savings">$650</strong>
+              </div>
+
+              <div class="result-block">
+                <span>Estimated Annual Savings</span>
+                <strong id="calc-annual">$7,800</strong>
+              </div>
             </div>
 
-            <div>
-              <p>Estimated Annual Savings</p>
-              <p id="calc-annual">$7,800</p>
-              <small>Estimate only. Final rates depend on usage, term, market conditions, meter type, and service area.</small>
-            </div>
+            <p>A simple comparison can reveal whether your current electricity plan is costing your business more than necessary.</p>
+            <small>Estimate only. Final rates depend on usage, term, market conditions, meter type, and service area.</small>
 
-            <div class="actions">
-              <a class="btn btn-orange" href="#quote">Request Full Analysis</a>
-            </div>
+            <a class="btn btn-orange savings-cta" href="#quote">Request Full Analysis</a>
           </div>
         </div>
       </div>
@@ -2211,25 +2120,20 @@ font-weight:800;
       }
 
       function updateSavingsCalculator() {
-        var usageInput = document.getElementById("calc-usage");
-        var rateInput = document.getElementById("calc-rate");
-        var targetInput = document.getElementById("calc-target");
-        var savingsOutput = document.getElementById("calc-savings");
-        var annualOutput = document.getElementById("calc-annual");
-
-        if (!usageInput || !rateInput || !targetInput || !savingsOutput) return;
-
-        var usage = parseNumber(usageInput.value);
-        var currentRate = parseNumber(rateInput.value);
-        var targetRate = parseNumber(targetInput.value);
-        var monthlySavings = 0;
+        var usage = parseNumber(document.getElementById("calc-usage")?.value);
+        var currentRate = parseNumber(document.getElementById("calc-rate")?.value);
+        var targetRate = parseNumber(document.getElementById("calc-target")?.value);
+        var monthly = 0;
 
         if (usage > 0 && currentRate > 0 && targetRate > 0 && currentRate > targetRate) {
-          monthlySavings = usage * ((currentRate - targetRate) / 100);
+          monthly = usage * ((currentRate - targetRate) / 100);
         }
 
-        savingsOutput.textContent = formatMoney(monthlySavings);
-        if (annualOutput) annualOutput.textContent = formatMoney(monthlySavings * 12);
+        var monthlyOutput = document.getElementById("calc-savings");
+        var annualOutput = document.getElementById("calc-annual");
+
+        if (monthlyOutput) monthlyOutput.textContent = formatMoney(monthly);
+        if (annualOutput) annualOutput.textContent = formatMoney(monthly * 12);
       }
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -2238,8 +2142,8 @@ font-weight:800;
           if (!input) return;
           input.addEventListener("input", updateSavingsCalculator);
           input.addEventListener("change", updateSavingsCalculator);
-          input.addEventListener("keyup", updateSavingsCalculator);
         });
+
         updateSavingsCalculator();
       });
     })();
