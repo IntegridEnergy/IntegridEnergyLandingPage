@@ -1489,6 +1489,133 @@ font-weight:800;
       }
     }
 
+
+    /* Calculator proportion + visibility refinement */
+    .calculator-box {
+      grid-template-columns: .95fr 2.05fr !important;
+      gap: 26px !important;
+      align-items: stretch !important;
+    }
+
+    .calculator-card {
+      padding: 34px !important;
+      gap: 24px !important;
+      align-content: center;
+    }
+
+    .calculator-card label {
+      font-size: 1.18rem !important;
+      line-height: 1.3 !important;
+      letter-spacing: -.02em;
+    }
+
+    .calculator-card label span {
+      font-size: 1rem !important;
+      margin-top: 8px !important;
+      line-height: 1.35 !important;
+    }
+
+    .calculator-card input {
+      min-height: 68px !important;
+      font-size: 1.6rem !important;
+      font-weight: 900 !important;
+      border-radius: 18px !important;
+      margin-top: 10px;
+    }
+
+    .calculator-result {
+      grid-template-columns: 1.1fr .9fr auto !important;
+      gap: 34px !important;
+      padding: 38px !important;
+    }
+
+    .calculator-result p {
+      font-size: 1.25rem !important;
+      line-height: 1.45 !important;
+    }
+
+    .calculator-result strong {
+      font-size: clamp(4rem, 7vw, 6rem) !important;
+      margin-top: 12px !important;
+      line-height: .95 !important;
+    }
+
+    .calculator-result #calc-annual {
+      font-size: 2.35rem !important;
+      line-height: 1.05 !important;
+      margin-top: 14px !important;
+    }
+
+    .calculator-result small {
+      font-size: 1rem !important;
+      line-height: 1.6 !important;
+      display: block;
+      margin-top: 18px !important;
+      max-width: 280px;
+    }
+
+    .calculator-result .btn {
+      min-width: 280px !important;
+      min-height: 76px !important;
+      font-size: 1.45rem !important;
+      border-radius: 18px !important;
+      padding: 18px 26px !important;
+    }
+
+    @media (max-width: 920px) {
+      .calculator-box {
+        grid-template-columns: 1fr !important;
+      }
+
+      .calculator-card {
+        grid-template-columns: 1fr !important;
+        padding: 24px !important;
+      }
+
+      .calculator-card label {
+        font-size: 1rem !important;
+      }
+
+      .calculator-card label span {
+        font-size: .92rem !important;
+      }
+
+      .calculator-card input {
+        min-height: 56px !important;
+        font-size: 1.25rem !important;
+      }
+
+      .calculator-result {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 28px !important;
+      }
+
+      .calculator-result p {
+        font-size: 1rem !important;
+      }
+
+      .calculator-result strong {
+        font-size: 3.2rem !important;
+      }
+
+      .calculator-result #calc-annual {
+        font-size: 1.6rem !important;
+      }
+
+      .calculator-result .btn {
+        width: 100%;
+        min-width: 0 !important;
+        font-size: 1.15rem !important;
+        min-height: 62px !important;
+      }
+
+      .calculator-result small {
+        max-width: none;
+        font-size: .92rem !important;
+      }
+    }
+
 </style>
 
   <!-- Local business structured data for Google -->
