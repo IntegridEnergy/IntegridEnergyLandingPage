@@ -854,6 +854,113 @@ font-weight:800;
       .socials { justify-content: flex-start; }
       .mobile-cta { display: flex; }
     }
+  
+    .mobile-menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--blue);
+      color: white;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      box-shadow: 0 12px 28px rgba(0,71,171,.22);
+    }
+
+    .mobile-menu-btn span {
+      width: 22px;
+      height: 2px;
+      background: white;
+      border-radius: 99px;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    body.menu-open .mobile-menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.menu-open .mobile-menu-btn span:nth-child(2) { opacity: 0; }
+    body.menu-open .mobile-menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 82px 0 auto 0;
+      z-index: 99;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 20px 44px rgba(6,27,70,.14);
+      padding: 16px;
+    }
+
+    body.dark .mobile-menu { background: rgba(7,20,46,.96); }
+
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 54px;
+      border-radius: 14px;
+      padding: 0 16px;
+      font-weight: 900;
+      color: var(--text);
+      border: 1px solid var(--border);
+      margin-bottom: 9px;
+      background: var(--card);
+    }
+
+    .mobile-menu a::after {
+      content: "›";
+      color: var(--orange);
+      font-size: 1.4rem;
+    }
+
+    .mobile-menu a.active {
+      background: linear-gradient(135deg, var(--blue), var(--blue-3));
+      color: white;
+      border-color: transparent;
+    }
+
+    .mobile-menu a.active::after { color: white; }
+
+    .mobile-menu-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 10px;
+    }
+
+    .mobile-menu-actions a {
+      margin: 0;
+      justify-content: center;
+      color: white;
+      border: 0;
+    }
+
+    .mobile-menu-actions a::after { display: none; }
+    .mobile-call { background: var(--blue) !important; }
+    .mobile-email { background: var(--orange) !important; }
+
+    body.menu-open .mobile-menu {
+      display: block;
+      animation: mobileMenuDrop .22s ease both;
+    }
+
+    @keyframes mobileMenuDrop {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 920px) {
+      .mobile-menu-btn { display: flex; }
+      .dark-toggle { display: none; }
+      .nav-wrap { min-height: 76px; }
+      .mobile-menu { inset: 76px 0 auto 0; }
+      body.menu-open { overflow: hidden; }
+    }
+
   </style>
 
   <!-- Local business structured data for Google -->
@@ -1037,8 +1144,27 @@ font-weight:800;
       </nav>
 
       <button class="dark-toggle" onclick="document.body.classList.toggle('dark')">☾ Dark Mode</button>
+      <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+        <a href="index.html">Home / Inicio</a>
+        <a href="commercial-electricity.html">Commercial / Comercial</a>
+        <a href="residential-electricity.html">Residential / Residencial</a>
+        <a href="new-business-electricity.html">New Business / Negocio Nuevo</a>
+        <a href="contractor-referral-program.html">Referrals / Referidos</a>
+        <a href="about.html">About / Nosotros</a>
+        <a href="contact.html" class="active">Contact / Contacto</a>
+      <div class="mobile-menu-actions">
+        <a class="mobile-call" href="tel:+19568845953">Call</a>
+        <a class="mobile-email" href="mailto:info@integridenergy.com">Email</a>
+      </div>
+    </nav>
 
   
 <main id="main-content">
@@ -1100,5 +1226,25 @@ font-weight:800;
     <a href="tel:+19568845953">☎ Call / Llamar</a>
     <a href="mailto:info@integridenergy.com">✉ Email / Escribir</a>
   </div>
+
+  <script>
+    const menuButton = document.querySelector('.mobile-menu-btn');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+
+    if (menuButton) {
+      menuButton.addEventListener('click', function () {
+        const isOpen = document.body.classList.toggle('menu-open');
+        menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    mobileMenuLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.body.classList.remove('menu-open');
+        if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
 </body>
 </html>
