@@ -961,6 +961,159 @@ font-weight:800;
       body.menu-open { overflow: hidden; }
     }
 
+  
+    .conversion-strip {
+      padding: 26px 0;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      color: white;
+    }
+
+    .conversion-strip .container {
+      display: grid;
+      grid-template-columns: 1.3fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .conversion-strip h2 {
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-bottom: 4px;
+    }
+
+    .conversion-strip p {
+      opacity: .95;
+      font-weight: 700;
+    }
+
+    .conversion-strip .btn {
+      background: white;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    .trust-section,
+    .calculator-section,
+    .industries-section,
+    .city-seo-section {
+      padding: 76px 0;
+    }
+
+    .trust-grid,
+    .industries-grid,
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .trust-card,
+    .industry-card,
+    .city-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .trust-card h3,
+    .industry-card h3,
+    .city-card h3 {
+      color: var(--blue);
+      margin-bottom: 8px;
+      font-size: 1.18rem;
+    }
+
+    body.dark .trust-card h3,
+    body.dark .industry-card h3,
+    body.dark .city-card h3 {
+      color: #8db5ff;
+    }
+
+    .calculator-box {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 30px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .calculator-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .calculator-card label {
+      display: grid;
+      gap: 7px;
+      font-weight: 900;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    body.dark .calculator-card label { color: #8db5ff; }
+
+    .calculator-card input {
+      min-height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      font: inherit;
+      color: #10203f;
+    }
+
+    .calculator-result {
+      background: linear-gradient(135deg, var(--blue), var(--blue-3));
+      color: white;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .calculator-result strong {
+      display: block;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1;
+      margin: 14px 0;
+      color: #fff;
+    }
+
+    .calculator-result small {
+      opacity: .85;
+      display: block;
+      margin-top: 12px;
+    }
+
+    .city-card {
+      display: block;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .city-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 42px rgba(0,71,171,.16);
+    }
+
+    @media (max-width: 920px) {
+      .conversion-strip .container,
+      .calculator-box,
+      .trust-grid,
+      .industries-grid,
+      .city-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .conversion-strip .btn {
+        width: 100%;
+      }
+    }
+
   </style>
 
   <!-- Local business structured data for Google -->
@@ -1208,6 +1361,17 @@ font-weight:800;
 </article>
     </div>
   </section>
+
+  <section class="conversion-strip">
+    <div class="container">
+      <div>
+        <h2>Want a free electricity comparison?</h2>
+        <p>Send your bill or project details. / Envíanos tu factura o detalles del proyecto.</p>
+      </div>
+      <a class="btn" href="index.html#quote">Request Quote</a>
+    </div>
+  </section>
+
 </main>
 
   <footer>

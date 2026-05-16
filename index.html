@@ -930,6 +930,159 @@ font-weight:800;
       body.menu-open { overflow: hidden; }
     }
 
+  
+    .conversion-strip {
+      padding: 26px 0;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      color: white;
+    }
+
+    .conversion-strip .container {
+      display: grid;
+      grid-template-columns: 1.3fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .conversion-strip h2 {
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-bottom: 4px;
+    }
+
+    .conversion-strip p {
+      opacity: .95;
+      font-weight: 700;
+    }
+
+    .conversion-strip .btn {
+      background: white;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    .trust-section,
+    .calculator-section,
+    .industries-section,
+    .city-seo-section {
+      padding: 76px 0;
+    }
+
+    .trust-grid,
+    .industries-grid,
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .trust-card,
+    .industry-card,
+    .city-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .trust-card h3,
+    .industry-card h3,
+    .city-card h3 {
+      color: var(--blue);
+      margin-bottom: 8px;
+      font-size: 1.18rem;
+    }
+
+    body.dark .trust-card h3,
+    body.dark .industry-card h3,
+    body.dark .city-card h3 {
+      color: #8db5ff;
+    }
+
+    .calculator-box {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 30px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .calculator-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .calculator-card label {
+      display: grid;
+      gap: 7px;
+      font-weight: 900;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    body.dark .calculator-card label { color: #8db5ff; }
+
+    .calculator-card input {
+      min-height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      font: inherit;
+      color: #10203f;
+    }
+
+    .calculator-result {
+      background: linear-gradient(135deg, var(--blue), var(--blue-3));
+      color: white;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .calculator-result strong {
+      display: block;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1;
+      margin: 14px 0;
+      color: #fff;
+    }
+
+    .calculator-result small {
+      opacity: .85;
+      display: block;
+      margin-top: 12px;
+    }
+
+    .city-card {
+      display: block;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .city-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 42px rgba(0,71,171,.16);
+    }
+
+    @media (max-width: 920px) {
+      .conversion-strip .container,
+      .calculator-box,
+      .trust-grid,
+      .industries-grid,
+      .city-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .conversion-strip .btn {
+        width: 100%;
+      }
+    }
+
   </style>
 
   <!-- Local business structured data for Google -->
@@ -1109,6 +1262,7 @@ font-weight:800;
         <a href="residential-electricity.html">Residential</a>
         <a href="new-business-electricity.html">New Business</a>
         <a href="contractor-referral-program.html">Referrals</a>
+        <a href="#calculator">Calculator</a>
         <a href="contact.html">Contact Us</a>
       </nav>
 
@@ -1306,6 +1460,106 @@ font-weight:800;
 
             <button class="submit-btn" type="submit">Send Request / Enviar Solicitud</button>
           </form>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="conversion-strip">
+      <div class="container">
+        <div>
+          <h2>Have a business electricity bill?</h2>
+          <p>Send it to us for a free comparison. / Envíanos tu factura comercial para una comparación gratis.</p>
+        </div>
+        <a class="btn" href="#quote">Start Free Comparison</a>
+      </div>
+    </section>
+
+    <section class="trust-section">
+      <div class="container">
+        <p class="section-kicker">Why Integrid Energy / Por Qué Integrid Energy</p>
+        <h2 class="section-title">Built for Texas businesses, homes, and new projects.</h2>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <h3>Bilingual Support</h3>
+            <p>Clear support in English and Spanish for business owners, homeowners, and contractors.</p>
+            <p>Apoyo claro en inglés y español para negocios, hogares y contratistas.</p>
+          </div>
+          <div class="trust-card">
+            <h3>Commercial Focus</h3>
+            <p>Rate review, renewal planning, and electricity setup support for Texas businesses.</p>
+            <p>Revisión de tarifas, renovaciones y servicio eléctrico para negocios en Texas.</p>
+          </div>
+          <div class="trust-card">
+            <h3>RGV Roots</h3>
+            <p>Based in the Rio Grande Valley and serving customers across the state of Texas.</p>
+            <p>Basados en el Valle del Río Grande y sirviendo a clientes en todo Texas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator-section" id="calculator">
+      <div class="container">
+        <p class="section-kicker">Commercial Savings Tool / Herramienta Comercial</p>
+        <h2 class="section-title">Estimate your possible monthly savings.</h2>
+        <p>This is only a simple estimate. For accurate pricing, send us your current bill and service address.</p>
+
+        <div class="calculator-box">
+          <div class="calculator-card">
+            <label>
+              Monthly Usage / Uso Mensual (kWh)
+              <input id="calc-usage" type="number" value="25000" min="0">
+            </label>
+            <label>
+              Current Rate / Tarifa Actual (¢/kWh)
+              <input id="calc-rate" type="number" value="10.5" min="0" step=".1">
+            </label>
+            <label>
+              Estimated New Rate / Nueva Tarifa Estimada (¢/kWh)
+              <input id="calc-target" type="number" value="7.9" min="0" step=".1">
+            </label>
+          </div>
+
+          <div class="calculator-result">
+            <p>Estimated Monthly Savings</p>
+            <strong id="calc-savings">$0</strong>
+            <p>A simple comparison can reveal whether your current electricity plan is costing your business more than necessary.</p>
+            <small>Estimate only. Final rates depend on usage, term, market conditions, meter type, and service area.</small>
+            <div class="actions" style="margin-top:24px;">
+              <a class="btn btn-orange" href="#quote">Request Full Analysis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries-section">
+      <div class="container">
+        <p class="section-kicker">Industries We Help / Industrias Que Ayudamos</p>
+        <h2 class="section-title">Electricity support for the businesses that keep Texas moving.</h2>
+        <div class="industries-grid">
+          <div class="industry-card"><h3>Restaurants</h3><p>High-usage kitchens, coolers, and HVAC needs.</p><p>Restaurantes con alto consumo eléctrico.</p></div>
+          <div class="industry-card"><h3>Retail Stores</h3><p>New locations, expansions, and monthly bill reviews.</p><p>Tiendas, expansiones y revisión de facturas.</p></div>
+          <div class="industry-card"><h3>Warehouses</h3><p>Commercial usage planning and long-term contract strategy.</p><p>Planeación de consumo comercial y contratos.</p></div>
+          <div class="industry-card"><h3>Offices</h3><p>Simple electricity options for professional spaces.</p><p>Opciones simples para oficinas y espacios profesionales.</p></div>
+          <div class="industry-card"><h3>New Construction</h3><p>Support for owners, GCs, and electricians preparing service.</p><p>Apoyo para dueños, contratistas y electricistas.</p></div>
+          <div class="industry-card"><h3>Homeowners</h3><p>Residential electricity options with bilingual guidance.</p><p>Opciones residenciales con apoyo bilingüe.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="city-seo-section">
+      <div class="container">
+        <p class="section-kicker">Service Areas / Áreas de Servicio</p>
+        <h2 class="section-title">Serving the Rio Grande Valley and all Texas.</h2>
+        <div class="city-grid">
+          <a class="city-card" href="commercial-electricity.html"><h3>McAllen</h3><p>Commercial and residential electricity support.</p></a>
+          <a class="city-card" href="commercial-electricity.html"><h3>Edinburg</h3><p>Business electricity and new service setup.</p></a>
+          <a class="city-card" href="commercial-electricity.html"><h3>Mission</h3><p>Electricity plans for homes and businesses.</p></a>
+          <a class="city-card" href="commercial-electricity.html"><h3>Pharr</h3><p>Local electricity support for commercial customers.</p></a>
+          <a class="city-card" href="commercial-electricity.html"><h3>Brownsville</h3><p>Texas energy options with bilingual support.</p></a>
+          <a class="city-card" href="commercial-electricity.html"><h3>Harlingen</h3><p>Commercial electricity guidance and quotes.</p></a>
         </div>
       </div>
     </section>
