@@ -1509,21 +1509,21 @@ font-weight:800;
           <div class="calculator-card">
             <label>
               Monthly Usage / Uso Mensual (kWh)
-              <input id="calc-usage" type="number" value="25000" min="0">
+              <input id="calc-usage" type="number" value="25000" min="0" inputmode="decimal">
             </label>
             <label>
               Current Rate / Tarifa Actual (¢/kWh)
-              <input id="calc-rate" type="number" value="10.5" min="0" step=".1">
+              <input id="calc-rate" type="number" value="10.5" min="0" step=".1" inputmode="decimal">
             </label>
             <label>
               Estimated New Rate / Nueva Tarifa Estimada (¢/kWh)
-              <input id="calc-target" type="number" value="7.9" min="0" step=".1">
+              <input id="calc-target" type="number" value="7.9" min="0" step=".1" inputmode="decimal">
             </label>
           </div>
 
           <div class="calculator-result">
             <p>Estimated Monthly Savings</p>
-            <strong id="calc-savings">$0</strong>
+            <strong id="calc-savings">$0</strong><p id="calc-annual" style="font-weight:900;margin-top:-8px;">Estimated Annual Savings: $0</p>
             <p>A simple comparison can reveal whether your current electricity plan is costing your business more than necessary.</p>
             <small>Estimate only. Final rates depend on usage, term, market conditions, meter type, and service area.</small>
             <div class="actions" style="margin-top:24px;">
@@ -1633,6 +1633,63 @@ font-weight:800;
         if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
       });
     });
+  </script>
+
+
+  <script>
+    (function () {
+      function parseNumber(value) {
+        if (value === null || value === undefined) return 0;
+        return Number(String(value).replace(/[^0-9.]/g, "")) || 0;
+      }
+
+      function formatMoney(value) {
+        return value.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+          maximumFractionDigits: 0
+        });
+      }
+
+      function updateSavingsCalculator() {
+        var usageInput = document.getElementById("calc-usage");
+        var rateInput = document.getElementById("calc-rate");
+        var targetInput = document.getElementById("calc-target");
+        var savingsOutput = document.getElementById("calc-savings");
+        var annualOutput = document.getElementById("calc-annual");
+
+        if (!usageInput || !rateInput || !targetInput || !savingsOutput) return;
+
+        var usage = parseNumber(usageInput.value);
+        var currentRate = parseNumber(rateInput.value);
+        var targetRate = parseNumber(targetInput.value);
+
+        var monthlySavings = 0;
+
+        if (usage > 0 && currentRate > 0 && targetRate > 0 && currentRate > targetRate) {
+          monthlySavings = usage * ((currentRate - targetRate) / 100);
+        }
+
+        savingsOutput.textContent = formatMoney(monthlySavings);
+
+        if (annualOutput) {
+          annualOutput.textContent = "Estimated Annual Savings: " + formatMoney(monthlySavings * 12);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        ["calc-usage", "calc-rate", "calc-target"].forEach(function (id) {
+          var input = document.getElementById(id);
+          if (!input) return;
+
+          input.addEventListener("input", updateSavingsCalculator);
+          input.addEventListener("change", updateSavingsCalculator);
+          input.addEventListener("keyup", updateSavingsCalculator);
+        });
+
+        updateSavingsCalculator();
+      });
+    })();
   </script>
 
 </body>
