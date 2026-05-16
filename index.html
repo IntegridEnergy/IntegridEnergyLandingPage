@@ -1238,6 +1238,73 @@ font-weight:800;
     }
 
 
+
+    /* Header refinement fix */
+    .nav-wrap {
+      min-height: 84px !important;
+      gap: 18px !important;
+    }
+
+    .brand {
+      min-width: auto !important;
+      gap: 14px !important;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 76px !important;
+      height: 76px !important;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      line-height: 1;
+    }
+
+    .brand-text strong {
+      font-size: 1.08rem;
+      letter-spacing: -.02em;
+    }
+
+    .nav-links {
+      gap: 18px !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: .95rem !important;
+      font-weight: 800;
+      padding: 0 !important;
+      min-height: auto !important;
+    }
+
+    .nav-links a::after {
+      bottom: -8px !important;
+    }
+
+    .dark-toggle {
+      min-width: 118px !important;
+      min-height: 42px;
+      font-size: .88rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 920px) {
+      .brand img {
+        width: 64px !important;
+        height: 64px !important;
+      }
+
+      .nav-links {
+        display: none !important;
+      }
+
+      .dark-toggle {
+        display: none !important;
+      }
+    }
+
 </style>
 
   <!-- Local business structured data for Google -->
