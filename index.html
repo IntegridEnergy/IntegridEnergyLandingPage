@@ -1613,6 +1613,130 @@ font-weight:800;
   }
 }
 
+
+/* Business Owner Perks + Contract Strategy */
+.strategy-section {
+  padding: 86px 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(0,71,171,.07), transparent 28%),
+    radial-gradient(circle at 88% 80%, rgba(255,107,0,.09), transparent 30%),
+    var(--soft);
+}
+
+.strategy-header {
+  max-width: 880px;
+  margin-bottom: 34px;
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.strategy-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.strategy-card.featured {
+  background: linear-gradient(135deg, var(--blue), var(--blue-3));
+  color: white;
+}
+
+.strategy-card h3 {
+  color: var(--blue);
+  font-size: 1.35rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.strategy-card.featured h3,
+.strategy-card.featured p {
+  color: white;
+}
+
+.strategy-card p {
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.strategy-card .mini-label {
+  display: inline-flex;
+  color: white;
+  background: var(--orange);
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: .78rem;
+  font-weight: 900;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.strategy-note {
+  margin-top: 22px;
+  background: rgba(255,107,0,.10);
+  border: 1px solid rgba(255,107,0,.22);
+  border-radius: 18px;
+  padding: 18px;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.owner-perk-banner {
+  margin-top: 24px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-2));
+  color: white;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 22px;
+  align-items: center;
+}
+
+.owner-perk-banner h3 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.owner-perk-banner p {
+  font-weight: 800;
+  max-width: 820px;
+}
+
+.owner-perk-banner .btn {
+  background: white;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+@media (max-width: 920px) {
+  .strategy-section {
+    padding: 62px 0;
+  }
+
+  .strategy-grid,
+  .owner-perk-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .strategy-card,
+  .owner-perk-banner {
+    padding: 22px;
+  }
+
+  .owner-perk-banner .btn {
+    width: 100%;
+  }
+}
+
 </style>
 
   <!-- Local business structured data for Google -->
@@ -1793,6 +1917,7 @@ font-weight:800;
         <a href="new-business-electricity.html">New Business</a>
         <a href="contractor-referral-program.html">Referrals</a>
         <a href="#calculator">Savings Calculator</a>
+        <a href="#energy-strategy">Strategy</a>
         <a href="contact.html">Contact Us</a>
       </nav>
 
@@ -1837,7 +1962,7 @@ font-weight:800;
           <p class="eyebrow">Rio Grande Valley • Texas Energy Solutions</p>
           <h1>Powering Texas.<br>Powering You.</h1>
           <p class="hero-sub"><span>Commercial & Residential</span> Electricity Solutions</p>
-          <p>Built for the Rio Grande Valley and all of Texas with honest guidance, competitive electricity options, and bilingual service that puts integrity first.</p>
+          <p>Built for the Rio Grande Valley and all of Texas with honest guidance, flexible commercial electricity contracts, future rate protection, and bilingual service that puts integrity first.</p>
 
           <div class="spanish">
             <h3>Energía para Texas. Energía para ti.</h3>
@@ -1976,6 +2101,74 @@ font-weight:800;
 
     <div class="section-divider" aria-hidden="true"></div>
 
+
+<section class="strategy-section" id="energy-strategy">
+  <div class="container">
+    <div class="strategy-header">
+      <p class="section-kicker">Commercial Energy Strategy / Estrategia Comercial</p>
+      <h2 class="section-title">Flexible contracts. Future rate protection. Honest recommendations.</h2>
+      <p>
+        Integrid Energy helps business owners plan ahead instead of reacting at the last minute.
+        Our goal is to protect your business from rising energy costs while keeping your contract strategy simple and transparent.
+      </p>
+    </div>
+
+    <div class="strategy-grid">
+      <article class="strategy-card">
+        <span class="mini-label">Flexible Terms</span>
+        <h3>1 month to 5 year contract options</h3>
+        <p>
+          Business owners can choose electricity contract options from 1 month up to 5 years,
+          depending on their goals, usage, timing, and market conditions.
+        </p>
+        <p>
+          Opciones flexibles de contrato desde 1 mes hasta 5 años para negocios en Texas.
+        </p>
+      </article>
+
+      <article class="strategy-card featured">
+        <span class="mini-label">Future Protection</span>
+        <h3>Lock in 7.9¢ up to 5 years in advance</h3>
+        <p>
+          Qualified businesses may be able to secure the 7.9¢ commercial rate up to 5 years before their current contract expires,
+          helping protect against inflation and rising energy prices.
+        </p>
+        <p>
+          Protege tu negocio contra aumentos futuros de energía con planificación anticipada.
+        </p>
+      </article>
+
+      <article class="strategy-card">
+        <span class="mini-label">Integrity First</span>
+        <h3>No unnecessary contract breaking</h3>
+        <p>
+          We do not recommend breaking existing contracts unless the savings significantly outweigh early termination fees.
+          The goal is long-term value, not unnecessary contract changes.
+        </p>
+        <p>
+          Recomendaciones honestas, claras y enfocadas en el beneficio real del cliente.
+        </p>
+      </article>
+    </div>
+
+    <div class="owner-perk-banner">
+      <div>
+        <h3>Save on your business. Save at home too.</h3>
+        <p>
+          Qualified business owners may also be able to add their home electricity account to the same competitive commercial pricing —
+          helping them save both at work and at home.
+        </p>
+      </div>
+      <a class="btn" href="#quote">Check Eligibility</a>
+    </div>
+
+    <div class="strategy-note">
+      Note: Eligibility, rates, terms, and residential add-on options depend on usage, service area, meter type, supplier approval, and market conditions.
+    </div>
+  </div>
+</section>
+
+
 <section class="quote-form-section" id="quote">
       <div class="container quote-form-wrap">
         <div class="quote-info">
@@ -1989,6 +2182,8 @@ font-weight:800;
             <div>✓ Residential plans / Planes residenciales</div>
             <div>✓ New meters / Medidores nuevos</div>
             <div>✓ Contract renewals / Renovaciones</div>
+            <div>✓ Future rate protection / Protección contra aumentos</div>
+            <div>✓ Business + home savings eligibility / Ahorro en negocio y hogar</div>
           </div>
         </div>
 
