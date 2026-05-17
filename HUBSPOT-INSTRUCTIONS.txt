@@ -1,0 +1,20 @@
+HubSpot Integration Instructions
+
+This website package is ready for HubSpot tracking.
+
+What you need:
+1. Log in to HubSpot.
+2. Go to Settings > Tracking & Analytics > Tracking Code.
+3. Copy your HubSpot portal ID or tracking script.
+4. Open each HTML file and replace:
+   YOUR_HUBSPOT_PORTAL_ID
+   with your actual HubSpot portal ID.
+
+Example:
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/12345678.js"></script>
+
+After replacing it:
+- Upload all files to GitHub.
+- Cloudflare will redeploy automatically.
+- HubSpot will start tracking page visits.
+- HubSpot forms/chat can be added next.
