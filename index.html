@@ -1762,6 +1762,49 @@ font-weight:800;
       }
     }
     
+
+/* VPP homepage section */
+.vpp-home-section{
+  padding:86px 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(0,71,171,.08), transparent 28%),
+    radial-gradient(circle at 88% 80%, rgba(255,107,0,.10), transparent 30%),
+    var(--soft);
+}
+.vpp-home-box{
+  display:grid;
+  grid-template-columns:1fr .9fr;
+  gap:36px;
+  align-items:center;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:32px;
+  padding:38px;
+  box-shadow:var(--shadow);
+}
+.vpp-home-box img{
+  width:100%;
+  border-radius:24px;
+  box-shadow:0 16px 34px rgba(6,27,70,.14);
+}
+.vpp-pills{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin:24px 0;
+}
+.vpp-pills div{
+  background:rgba(0,71,171,.07);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:12px;
+  font-weight:900;
+}
+@media(max-width:920px){
+  .vpp-home-box,.vpp-pills{grid-template-columns:1fr;}
+  .vpp-home-box{padding:24px;}
+}
+
 </style>
 
   <!-- Local business structured data for Google -->
@@ -1939,6 +1982,7 @@ font-weight:800;
         <a href="index.html">Home</a>
         <a href="commercial-electricity.html">Commercial</a>
         <a href="residential-electricity.html">Residential</a>
+        <a href="vpp-battery-program.html">VPP Battery</a>
         <a href="new-business-electricity.html">New Business</a>
         <a href="contractor-referral-program.html">Referrals</a>
         <a href="#calculator">Savings Calculator</a>
@@ -1959,6 +2003,7 @@ font-weight:800;
         <a href="index.html" class="active">Home / Inicio</a>
         <a href="commercial-electricity.html">Commercial / Comercial</a>
         <a href="residential-electricity.html">Residential / Residencial</a>
+        <a href="vpp-battery-program.html">VPP Battery / Baterías</a>
         <a href="new-business-electricity.html">New Business / Negocio Nuevo</a>
         <a href="contractor-referral-program.html">Referrals / Referidos</a>
         <a href="about.html">About / Nosotros</a>
@@ -2384,6 +2429,32 @@ font-weight:800;
   </main>
 
   
+
+<section class="vpp-home-section" id="vpp-battery">
+  <div class="container">
+    <div class="vpp-home-box">
+      <div>
+        <p class="section-kicker">New Residential Program / Nuevo Programa Residencial</p>
+        <h2 class="section-title">Whole-home battery backup for qualifying homeowners.</h2>
+        <p>Integrid Energy’s VPP Battery Program gives homeowners 30 kWh backup capacity, stable electricity pricing, and one simple $20/month payment for two batteries.</p>
+        <div class="vpp-pills">
+          <div>30 kWh total backup</div>
+          <div>$20/month for two batteries</div>
+          <div>No credit checks or deposits</div>
+          <div>Homeowners only</div>
+          <div>36-month VPP energy plan</div>
+          <div>No renters or leased homes</div>
+        </div>
+        <a class="btn btn-orange" href="vpp-battery-program.html">Explore VPP Battery Program</a>
+      </div>
+      <div>
+        <img src="battery-flyer.jpeg" alt="Integrid Energy VPP Battery Program">
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="success-stories" id="success-stories">
   <div class="container">
     <div class="stories-header">
