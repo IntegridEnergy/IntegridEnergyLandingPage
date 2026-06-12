@@ -1464,6 +1464,66 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
   body.menu-open{overflow:hidden;}
 }
 
+
+/* Commercial pricing + new location section */
+.commercial-pricing-card {
+  background: linear-gradient(135deg, var(--blue), var(--blue-3, #07245f));
+  color: white;
+}
+.commercial-pricing-card h2,
+.commercial-pricing-card h3,
+.commercial-pricing-card p,
+.commercial-pricing-card li {
+  color: white;
+}
+.rate-highlight {
+  display: block;
+  color: #ffb066;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1;
+  font-weight: 900;
+  margin: 14px 0;
+  letter-spacing: -.05em;
+}
+.two-column-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  padding-left: 20px;
+}
+@media(max-width:920px){
+  .two-column-list { grid-template-columns: 1fr; }
+}
+
+
+/* Legal/footer links */
+.legal-footer {
+  padding: 22px 0;
+  background: #061b46;
+  color: rgba(255,255,255,.86);
+  border-top: 1px solid rgba(255,255,255,.12);
+  font-size: .92rem;
+}
+.legal-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.legal-footer a {
+  color: white;
+  font-weight: 800;
+  margin-left: 14px;
+}
+.legal-footer a:hover {
+  color: var(--orange);
+}
+@media(max-width:920px){
+  .legal-footer .container { display: grid; gap: 10px; text-align: center; }
+  .legal-footer a { margin: 0 7px; }
+}
+
 </style>
 
   <!-- Local business structured data for Google -->
@@ -1641,7 +1701,6 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
         <a href="index.html">Home</a>
         <a href="commercial-electricity.html">Commercial</a>
         <a href="residential-electricity.html">Residential</a>
-        <a href="new-business-electricity.html">New Business</a>
         <a href="contractor-referral-program.html">Referrals</a>
         <a href="contact.html">Contact Us</a>
       </nav>
@@ -1661,7 +1720,6 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
   <a href="index.html">Home / Inicio</a>
   <a href="commercial-electricity.html">Commercial / Comercial</a>
   <a href="residential-electricity.html">Residential / Residencial</a>
-  <a href="new-business-electricity.html">New Business / Negocio Nuevo</a>
   <a href="contractor-referral-program.html">Referrals / Referidos</a>
   <a href="about.html">About / Nosotros</a>
   <a href="contact.html">Contact / Contacto</a>
@@ -1705,6 +1763,37 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
 
   <section class="seo-page-content">
     <div class="container page-grid">
+
+<article class="seo-card commercial-pricing-card">
+<h2>Commercial Rates Starting in the 7¢ Range</h2>
+<span class="rate-highlight">7¢ range</span>
+<p>Many businesses qualify for commercial electricity rates in the 7¢ range. Depending on usage, load profile, contract term, service area, and market conditions, higher-usage businesses may qualify for even lower pricing.</p>
+<p>Every account receives a free cost analysis so you can clearly compare your current electricity costs against available options.</p>
+<p><strong>Displayed pricing is subject to usage, term length, service area, utility territory, supplier approval, and market conditions.</strong></p>
+</article>
+
+<article class="seo-card">
+<h2>Opening a New Location?</h2>
+<p>Opening your first location, expanding, moving, or adding meters? Integrid Energy can help you prepare electricity service before opening day.</p>
+<ul class="two-column-list">
+<li>New meter setup guidance</li>
+<li>REP enrollment support</li>
+<li>Competitive commercial rates</li>
+<li>Future rate protection</li>
+<li>Multi-location businesses</li>
+<li>New construction and tenant buildouts</li>
+<li>Contract renewal planning</li>
+<li>Commercial cost analysis</li>
+</ul>
+<p>This keeps your electricity setup simple while giving you access to the same commercial pricing and long-term planning options.</p>
+</article>
+
+<article class="seo-card">
+<h2>Plan Ahead Before Your Contract Ends</h2>
+<p>Commercial customers can choose contract options from 1 month to 5 years. Qualified businesses may also be able to lock in 7.9¢ pricing up to 5 years in advance to help protect against inflation and rising energy costs.</p>
+<p>We do not recommend breaking existing contracts unless the savings significantly outweigh early termination fees.</p>
+</article>
+
       <article class="seo-card"><h2>Commercial Electricity Solutions</h2>
 <p>Integrid Energy helps Texas businesses compare electricity options, understand rate structures, and prepare for contract renewals or new service setup. We work with commercial customers including restaurants, retail stores, offices, warehouses, service businesses, and expanding locations.</p>
 <ul>
@@ -1786,6 +1875,18 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
       </div>
     </div>
   </footer>
+
+<section class="legal-footer">
+  <div class="container">
+    <div>© 2026 Integrid Energy LLC. All rights reserved.</div>
+    <div>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</section>
+
 
   <div class="mobile-cta">
     <a href="tel:+19568845953">☎ Call / Llamar</a>

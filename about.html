@@ -1464,6 +1464,35 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
   body.menu-open{overflow:hidden;}
 }
 
+
+/* Legal/footer links */
+.legal-footer {
+  padding: 22px 0;
+  background: #061b46;
+  color: rgba(255,255,255,.86);
+  border-top: 1px solid rgba(255,255,255,.12);
+  font-size: .92rem;
+}
+.legal-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.legal-footer a {
+  color: white;
+  font-weight: 800;
+  margin-left: 14px;
+}
+.legal-footer a:hover {
+  color: var(--orange);
+}
+@media(max-width:920px){
+  .legal-footer .container { display: grid; gap: 10px; text-align: center; }
+  .legal-footer a { margin: 0 7px; }
+}
+
 </style>
 
   <!-- Local business structured data for Google -->
@@ -1641,7 +1670,6 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
         <a href="index.html">Home</a>
         <a href="commercial-electricity.html">Commercial</a>
         <a href="residential-electricity.html">Residential</a>
-        <a href="new-business-electricity.html">New Business</a>
         <a href="contractor-referral-program.html">Referrals</a>
         <a href="contact.html">Contact Us</a>
       </nav>
@@ -1661,7 +1689,6 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
   <a href="index.html">Home / Inicio</a>
   <a href="commercial-electricity.html">Commercial / Comercial</a>
   <a href="residential-electricity.html">Residential / Residencial</a>
-  <a href="new-business-electricity.html">New Business / Negocio Nuevo</a>
   <a href="contractor-referral-program.html">Referrals / Referidos</a>
   <a href="about.html">About / Nosotros</a>
   <a href="contact.html">Contact / Contacto</a>
@@ -1753,6 +1780,18 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
       </div>
     </div>
   </footer>
+
+<section class="legal-footer">
+  <div class="container">
+    <div>© 2026 Integrid Energy LLC. All rights reserved.</div>
+    <div>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</section>
+
 
   <div class="mobile-cta">
     <a href="tel:+19568845953">☎ Call / Llamar</a>
