@@ -16,6 +16,22 @@ main{padding:64px 0}
 h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1;color:var(--blue);margin-top:0}
 h2{color:var(--blue);margin-top:30px}
 a{color:var(--blue);font-weight:800}
+
+/* Logo size upgrade */
+.logo img,
+.nav-logo img,
+.header-logo img{
+  height:72px !important;
+  width:auto !important;
+}
+@media(max-width:920px){
+  .logo img,
+  .nav-logo img,
+  .header-logo img{
+    height:58px !important;
+  }
+}
+
 </style>
 </head>
 <body>
