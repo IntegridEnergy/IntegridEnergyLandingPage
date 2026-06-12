@@ -263,6 +263,13 @@ a{color:var(--blue);font-weight:800}
   }
 }
 
+
+/* Language display safety cleanup */
+html[data-lang="en"] .lang-es { display: none !important; }
+html[data-lang="es"] .lang-en { display: none !important; }
+html[data-lang="en"] .lang-en,
+html[data-lang="es"] .lang-es { display: revert; }
+
 </style>
 </head>
 <body>

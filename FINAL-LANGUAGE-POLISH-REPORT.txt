@@ -1,0 +1,15 @@
+Final language polish completed.
+
+Checked and cleaned:
+- English side no longer shows mixed labels like “Commercial / Comercial” or “Electricidad.”
+- Residential FAQ was cleaned in both English and Spanish.
+- Spanish content remains available through the ES language toggle.
+- English remains the default language.
+- Remaining bilingual content should only appear after selecting ES.
+
+Recommended manual test after upload:
+1. Open homepage in English.
+2. Click through Commercial, Residential, Contact.
+3. Confirm no Spanish text appears.
+4. Switch to ES and verify Spanish content appears.
+5. Switch back to EN and confirm English returns.

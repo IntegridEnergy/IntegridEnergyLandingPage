@@ -1,0 +1,15 @@
+Language audit completed.
+
+Actions taken:
+- Removed bilingual slash labels from visible navigation/section kickers.
+- Wrapped obvious Spanish text with lang-es where needed.
+- Added stronger CSS so English and Spanish do not display together.
+- Default language remains English with ES available through toggle.
+
+Items flagged for manual review:
+- about.html: {'Spanish visible in EN': ['á', 'ó']}
+- commercial-electricity.html: {'Spanish visible in EN': ['ó']}
+- contact.html: {'Spanish visible in EN': ['á', 'ó']}
+- contractor-referral-program.html: {'Spanish visible in EN': ['ó']}
+- index.html: {'Spanish visible in EN': ['Electricidad', 'é', 'ó', 'tarifa']}
+- residential-electricity.html: {'Spanish visible in EN': ['Electricidad', 'ó']}

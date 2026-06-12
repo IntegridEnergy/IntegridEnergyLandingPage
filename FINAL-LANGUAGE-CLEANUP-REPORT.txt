@@ -1,0 +1,11 @@
+Final language cleanup completed.
+
+What was fixed:
+- Removed mixed English/Spanish slash labels from visible English navigation and sections.
+- Kept Spanish content behind the ES language toggle.
+- Cleaned Residential FAQ wording.
+- Added CSS safeguard so English and Spanish do not show at the same time.
+
+Remaining items to manually review:
+index.html: ['Electricidad', 'tarifa']
+residential-electricity.html: ['Electricidad']
