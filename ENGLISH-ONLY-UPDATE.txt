@@ -1,0 +1,1 @@
+This version removes visible Spanish content and the EN/ES toggle. The website is now English-only for a cleaner user experience. Spanish SEO pages can be created later under /es/ as a dedicated project.
