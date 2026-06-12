@@ -69,6 +69,109 @@ a{color:var(--blue);font-weight:800}
   }
 }
 
+
+/* Mobile conversion optimization */
+.mobile-sticky-cta{
+ position:fixed;
+ left:0; right:0; bottom:0;
+ z-index:9999;
+ display:none;
+ background:#0047AB;
+ padding:10px;
+ box-shadow:0 -8px 24px rgba(0,0,0,.15);
+}
+.mobile-sticky-cta-inner{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+ max-width:900px;
+ margin:auto;
+}
+.mobile-sticky-cta a{
+ text-decoration:none;
+ text-align:center;
+ padding:14px 10px;
+ border-radius:12px;
+ font-weight:900;
+}
+.mobile-call{background:#fff;color:#0047AB;}
+.mobile-quote{background:#ff6b00;color:#fff;}
+
+@media(max-width:920px){
+ body{padding-bottom:84px;}
+ .mobile-sticky-cta{display:block;}
+ .hero-rate-card,
+ .residential-compact-box,
+ .why-compact-card,
+ .seo-card{
+   border-radius:18px !important;
+ }
+ .btn{
+   min-height:58px !important;
+   font-size:1rem !important;
+ }
+ p, li{
+   font-size:1rem;
+   line-height:1.6;
+ }
+ .section-title{
+   font-size:clamp(2rem,8vw,2.8rem)!important;
+ }
+}
+
+
+/* Social icon and mobile lead improvements */
+.social-icons a,
+.mobile-menu-socials a {
+  font-size: 0 !important;
+  position: relative;
+}
+
+.social-icons a::before,
+.mobile-menu-socials a::before {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.social-icons a[aria-label="Facebook"]::before,
+.mobile-menu-socials a[href*="facebook"]::before {
+  content: "f";
+}
+
+.social-icons a[aria-label="Instagram"]::before,
+.mobile-menu-socials a[href*="instagram"]::before {
+  content: "◎";
+}
+
+.social-icons a[aria-label="TikTok"]::before,
+.mobile-menu-socials a[href*="tiktok"]::before {
+  content: "♪";
+}
+
+.send-bill-floating {
+  position: fixed;
+  right: 16px;
+  bottom: 96px;
+  z-index: 9998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-2, #ff8a1f));
+  color: white !important;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(255,107,0,.32);
+}
+
+@media(max-width:920px){
+  .send-bill-floating { display: inline-flex; }
+  .calculator-section { scroll-margin-top: 86px; }
+  #quote { scroll-margin-top: 86px; }
+}
+
 </style>
 </head>
 <body>
@@ -101,7 +204,7 @@ a{color:var(--blue);font-weight:800}
 <p>Our website may use cookies and tracking technologies to improve site performance, measure advertising effectiveness, and understand visitor behavior.</p>
 
 <h2>Contact</h2>
-<p>Questions about this policy can be sent to <a href="mailto:info@integridenergy.com">info@integridenergy.com</a> or by calling <a href="tel:+19568845953">(956) 884-5953</a>.</p>
+<p>Questions about this policy can be sent to <a href="mailto:info@integridenergy.com">info@integridenergy.com</a> or by calling <a href="tel:+19568845953"><a href="tel:+19568845953">(956) 884-5953</a></a>.</p>
 </div>
 </main>
 
