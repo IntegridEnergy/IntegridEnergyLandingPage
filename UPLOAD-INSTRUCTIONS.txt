@@ -1,0 +1,1 @@
+Emergency fix: Your current GitHub index.html is not valid HTML and is being shown as code/text. Upload the contents of this ZIP to the repository root, replacing existing files. Make sure index.html begins with <!DOCTYPE html> when viewed in GitHub.
