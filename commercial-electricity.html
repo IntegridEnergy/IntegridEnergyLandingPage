@@ -1680,6 +1680,97 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
   #quote { scroll-margin-top: 86px; }
 }
 
+
+/* Customer experience conversion upgrades */
+.trust-bar-simple {
+  padding: 18px 0;
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.trust-bar-simple .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  text-align: center;
+}
+.trust-bar-simple span {
+  background: rgba(0,71,171,.06);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  font-weight: 900;
+  color: var(--blue);
+}
+.how-it-works-simple {
+  padding: 64px 0;
+  background: #ffffff;
+}
+.steps-simple {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 26px;
+}
+.step-simple {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.step-simple h3 {
+  color: var(--blue);
+  margin: 0 0 10px;
+}
+.service-area-simple {
+  padding: 42px 0;
+  background: rgba(0,71,171,.06);
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.service-area-simple p {
+  font-weight: 900;
+  color: var(--text);
+  margin: 12px auto 0;
+  max-width: 900px;
+}
+.owner-perk-simple {
+  margin-top: 22px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-2, #ff8a1f));
+  color: white;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.owner-perk-simple h3,
+.owner-perk-simple p {
+  color: white;
+}
+.form-expectation {
+  margin: 16px 0;
+  display: grid;
+  gap: 8px;
+  font-weight: 900;
+  color: var(--blue);
+}
+.form-expectation div {
+  background: rgba(0,71,171,.06);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+@media(max-width:920px){
+  .trust-bar-simple .container,
+  .steps-simple {
+    grid-template-columns: 1fr;
+  }
+  .how-it-works-simple {
+    padding: 46px 0;
+  }
+}
+
 </style>
 
   <!-- Local business structured data for Google -->
@@ -1878,7 +1969,7 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
 
   
 <nav class="mobile-menu" aria-label="Mobile navigation">
-  <a class="mobile-primary" href="index.html#quote">Get Free Quote / Cotización</a>
+  <a class="mobile-primary" href="index.html#quote">Get Free Cost Analysis / Cotización</a>
   <a href="index.html">Home / Inicio</a>
   <a href="commercial-electricity.html">Commercial / Comercial</a>
   <a href="residential-electricity.html">Residential / Residencial</a>
@@ -1917,7 +2008,7 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
         </div>
         <div class="actions">
           <a class="btn btn-blue" href="tel:+19568845953">☎ Call Us / Llámanos</a>
-          <a class="btn btn-outline" href="contact.html#quote">✉ Get Quote / Cotización</a>
+          <a class="btn btn-outline" href="contact.html#quote">✉ Upload Your Bill / Cotización</a>
         </div>
       </div>
     </div>
@@ -2003,7 +2094,7 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
         <h2>Want a free electricity comparison?</h2>
         <p>Send your bill or project details. / Envíanos tu factura o detalles del proyecto.</p>
       </div>
-      <a class="btn" href="index.html#quote">Request Quote</a>
+      <a class="btn" href="index.html#quote">Upload Your Bill</a>
     </div>
   </section>
 
@@ -2077,7 +2168,7 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
 
   <div class="sticky-mobile-cta" aria-label="Quick contact actions">
     <a class="cta-call" href="tel:+19568845953">Call<br>Llamar</a>
-    <a class="cta-quote" href="index.html#quote">Get Quote<br>Cotización</a>
+    <a class="cta-quote" href="index.html#quote">Upload Your Bill<br>Cotización</a>
     <a class="cta-email" href="mailto:info@integridenergy.com">Email<br>Correo</a>
   </div>
 
