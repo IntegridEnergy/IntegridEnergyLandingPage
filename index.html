@@ -2003,6 +2003,224 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
   .legal-footer a { margin: 0 7px; }
 }
 
+
+/* Concise homepage redesign */
+.home-hero {
+  padding: 88px 0 72px;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(255,107,0,.13), transparent 28%),
+    radial-gradient(circle at 92% 72%, rgba(0,71,171,.16), transparent 34%),
+    linear-gradient(135deg, #ffffff 0%, #eef5ff 100%);
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 38px;
+  align-items: center;
+}
+
+.home-hero h1 {
+  font-size: clamp(3rem, 7vw, 5.7rem);
+  line-height: .92;
+  letter-spacing: -.06em;
+  color: var(--navy);
+  margin: 12px 0 20px;
+}
+
+.home-hero h1 span {
+  color: var(--orange);
+}
+
+.home-hero p {
+  font-size: 1.16rem;
+  color: var(--text);
+  max-width: 680px;
+}
+
+.hero-rate-card {
+  background: linear-gradient(135deg, var(--blue), var(--blue-3, #07245f));
+  color: white;
+  border-radius: 30px;
+  padding: 34px;
+  box-shadow: var(--shadow);
+}
+
+.hero-rate-card .rate {
+  font-size: clamp(4rem, 8vw, 6.3rem);
+  font-weight: 900;
+  line-height: .9;
+  color: #ffb066;
+  letter-spacing: -.07em;
+  margin: 12px 0;
+}
+
+.hero-rate-card p,
+.hero-rate-card li {
+  color: rgba(255,255,255,.92);
+}
+
+.hero-rate-card ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 20px;
+  margin: 22px 0 0;
+  font-weight: 800;
+}
+
+.quick-proof {
+  padding: 26px 0;
+  background: var(--blue);
+  color: white;
+}
+
+.quick-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  text-align: center;
+}
+
+.quick-proof-grid div {
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 16px;
+  padding: 16px;
+  font-weight: 900;
+}
+
+.why-compact {
+  padding: 76px 0;
+  background: var(--soft);
+}
+
+.why-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.why-compact-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.why-compact-card h3 {
+  color: var(--blue);
+  font-size: 1.2rem;
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.why-compact-card p {
+  margin: 0;
+}
+
+.residential-compact {
+  padding: 64px 0;
+  background: rgba(0,71,171,.06);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.residential-compact-box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.residential-compact ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.residential-compact li {
+  background: rgba(0,71,171,.07);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 900;
+  font-size: .92rem;
+}
+
+.home-section-tight {
+  padding: 76px 0;
+}
+
+.final-cta-strip {
+  padding: 34px 0;
+  background: linear-gradient(135deg, var(--orange), var(--orange-2, #ff8a1f));
+  color: white;
+}
+
+.final-cta-strip .container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.final-cta-strip h2 {
+  margin: 0 0 6px;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+.final-cta-strip p {
+  margin: 0;
+  font-weight: 800;
+}
+
+.final-cta-strip .btn {
+  background: white;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+@media(max-width:920px){
+  .home-hero-grid,
+  .residential-compact-box,
+  .final-cta-strip .container {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-proof-grid,
+  .why-compact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    padding: 58px 0 50px;
+  }
+
+  .hero-rate-card {
+    padding: 26px;
+  }
+
+  .residential-compact ul {
+    display: grid;
+  }
+
+  .final-cta-strip .btn {
+    width: 100%;
+  }
+}
+
 </style>
 
   <!-- Local business structured data for Google -->
@@ -2182,7 +2400,6 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
         <a href="residential-electricity.html">Residential</a>
         <a href="contractor-referral-program.html">Referrals</a>
         <a href="#calculator">Savings Calculator</a>
-        <a href="#energy-strategy">Strategy</a>
         <a href="contact.html">Contact Us</a>
       </nav>
 
@@ -2197,7 +2414,7 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
 
   
 <nav class="mobile-menu" aria-label="Mobile navigation">
-  <a class="mobile-primary" href="index.html#quote">Get Free Quote / Cotización</a>
+  <a class="mobile-primary" href="index.html#quote">Get Free Analysis / Cotización</a>
   <a href="index.html">Home / Inicio</a>
   <a href="commercial-electricity.html">Commercial / Comercial</a>
   <a href="residential-electricity.html">Residential / Residencial</a>
@@ -2212,141 +2429,45 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
 </nav>
 
 
-  <main id="main-content">
-    <section class="hero">
-      <div class="hero-art" aria-hidden="true">
-<div class="energy-grid">
-<div class="sun-glow"></div>
-<div class="power-line"></div>
-<div class="power-pole pole-left"></div>
-<div class="power-pole pole-right"></div>
-<div class="building building-one"></div>
-<div class="building building-two"></div>
-<div class="building building-three"></div>
-</div>
-</div>
-<div class="container">
-        <div class="hero-content">
-          <p class="eyebrow">Rio Grande Valley • Texas Energy Solutions</p>
-          <h1>Powering Texas.<br>Powering You.</h1>
-          <p class="hero-sub"><span>Commercial & Residential</span> Electricity Solutions</p>
-          <p>Built for the Rio Grande Valley and all of Texas with honest guidance, flexible commercial electricity contracts, future rate protection, and bilingual service that puts integrity first.</p>
-
-          <div class="spanish">
-            <h3>Energía para Texas. Energía para ti.</h3>
-            <p>Soluciones eléctricas comerciales y residenciales para el Valle del Río Grande y más allá.</p>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn-blue" href="tel:+19568845953">☎ Call Us / Llámanos</a>
-            <a class="btn btn-outline" href="mailto:info@integridenergy.com">✉ Email Us / Escríbenos</a>
-          </div>
+  
+<main id="main-content">
+  <section class="home-hero">
+    <div class="container home-hero-grid">
+      <div>
+        <p class="eyebrow">Texas Commercial Electricity Broker</p>
+        <h1>Commercial rates starting in the <span>7¢ range.</span></h1>
+        <p>Integrid Energy helps Texas businesses compare electricity options, plan ahead, and lower costs with a free electricity cost analysis.</p>
+        <div class="actions">
+          <a class="btn btn-orange" href="#quote">Get Free Analysis</a>
+          <a class="btn btn-blue" href="#calculator">Calculate Savings</a>
         </div>
       </div>
-    </section>
 
-
-    
-
-    
-
-    <div class="container cards">
-      <article class="card" id="commercial">
-        <div class="icon">▥</div>
-        <h3>Commercial<br>Comercial</h3>
-        <p>Custom electricity solutions for businesses of all sizes.</p>
-        <p>Soluciones eléctricas personalizadas para negocios de todos tamaños.</p>
-      </article>
-
-      <article class="card" id="residential">
-        <div class="icon">⌂</div>
-        <h3>Residential<br>Residencial</h3>
-        <p>All-in fixed rates around 12¢ with energy and TDU included.</p>
-        <p>Tarifas fijas todo incluido alrededor de 12¢ para tu hogar.</p>
-      </article>
-
-      <article class="card">
-        <div class="icon">↗</div>
-        <h3>Lower Rates<br>Mejores Tarifas</h3>
-        <p>We shop the market so you do not have to.</p>
-        <p>Buscamos en el mercado para que tú no tengas que hacerlo.</p>
-      </article>
-
-      <article class="card">
-        <div class="icon">✓</div>
-        <h3>Integrity First<br>Integridad Primero</h3>
-        <p>Honest service. Transparent pricing. Long-term partners.</p>
-        <p>Servicio honesto. Precios transparentes. Socios a largo plazo.</p>
-      </article>
-    </div>
-
-    <section class="stats">
-      <div class="container stats-grid">
-        <div class="stat"><strong>500+</strong><span>Happy Clients / Clientes Satisfechos</span></div>
-        <div class="stat"><strong>300M+</strong><span>kWh Managed / kWh Administrados</span></div>
-        <div class="stat"><strong>100%</strong><span>Texas Focused / Enfocados en Texas</span></div>
-        <div class="stat"><strong>10+</strong><span>Years Experience / Años de Experiencia</span></div>
+      <div class="hero-rate-card">
+        <p class="section-kicker" style="color:#ffb066;">Transparent Pricing</p>
+        <div class="rate">7¢</div>
+        <h2>Commercial pricing starts in the 7¢ range.</h2>
+        <p>Depending on usage, load profile, term, and market conditions, higher-usage businesses may qualify for even lower pricing.</p>
+        <ul>
+          <li>1 month to 5 year commercial agreements</li>
+          <li>Lock future rates up to 5 years ahead</li>
+          <li>No unnecessary contract breaking</li>
+          <li>Business owners may qualify for home savings too</li>
+        </ul>
       </div>
-    </section>
-
-    <section id="why">
-      <div class="container split">
-        <div class="image-box" aria-label="Texas energy landscape illustration">
-          
-        </div>
-
-        <div class="copy">
-          <p class="section-kicker">Our Mission / Nuestra Misión</p>
-          <h2 class="section-title">Power Through Integrity<br><span class="orange">Energía a través de la integridad</span></h2>
-          <p>At Integrid Energy, we believe in doing what is right for our clients. We deliver reliable electricity solutions with honesty, transparency, and unmatched service.</p>
-          <p>En Integrid Energy, creemos en hacer lo correcto para nuestros clientes. Ofrecemos soluciones eléctricas confiables con honestidad, transparencia y servicio incomparable.</p>
-          <a class="btn btn-blue" href="#contact">Contact Us / Contáctanos →</a>
-        </div>
-      </div>
-    </section>
-
-
-    
-
-<section class="why-integrid-section" id="why-integrid">
-  <div class="container">
-    <div class="why-integrid-header">
-      <p class="section-kicker">Why Integrid Energy / Por Qué Integrid Energy</p>
-      <h2 class="section-title">Electricity guidance built around long-term savings, not pressure.</h2>
-      <p>Integrid Energy helps Texas businesses and homeowners make smarter electricity decisions with flexible options, bilingual support, and honest recommendations.</p>
     </div>
+  </section>
 
-    <div class="why-integrid-grid">
-      <article class="why-integrid-card">
-        <h3>1 month to 5 year commercial contracts</h3>
-        <p>Flexible options for businesses that want short-term flexibility or long-term price protection.</p>
-      </article>
-      <article class="why-integrid-card featured">
-        <h3>Lock 7.9¢ up to 5 years in advance</h3>
-        <p>Qualified businesses can protect against inflation and rising energy prices by planning ahead.</p>
-      </article>
-      <article class="why-integrid-card">
-        <h3>No unnecessary contract breaking</h3>
-        <p>We only recommend breaking contracts if the savings clearly outweigh early termination fees.</p>
-      </article>
-      <article class="why-integrid-card">
-        <h3>Business + home savings</h3>
-        <p>Qualified business owners may be able to add their home to the same competitive commercial pricing.</p>
-      </article>
-      <article class="why-integrid-card">
-        <h3>Residential fixed rates</h3>
-        <p>Simple all-in residential fixed rates around 12¢ with energy charge and TDU included.</p>
-      </article>
-      <article class="why-integrid-card">
-        <h3>Bilingual Texas support</h3>
-        <p>Clear support in English and Spanish for commercial and residential customers.</p>
-      </article>
+  <section class="quick-proof">
+    <div class="container quick-proof-grid">
+      <div>Free Cost Analysis</div>
+      <div>Bilingual Support</div>
+      <div>Texas Businesses & Homes</div>
+      <div>Contract Strategy</div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<section class="calculator-section" id="calculator">
+  <section class="calculator-section" id="calculator">
       <div class="container">
         <div class="calculator-intro">
           <p class="section-kicker">Commercial Savings Tool / Herramienta Comercial</p>
@@ -2406,77 +2527,171 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
       </div>
     </section>
 
-    <div class="section-divider" aria-hidden="true"></div>
+  <section class="why-compact" id="why-integrid">
+    <div class="container">
+      <p class="section-kicker">Why Integrid Energy / Por Qué Integrid Energy</p>
+      <h2 class="section-title">Clear electricity guidance without the pressure.</h2>
 
+      <div class="why-compact-grid">
+        <article class="why-compact-card">
+          <h3>Rates in the 7¢ range</h3>
+          <p>Commercial pricing starts in the 7¢ range, with lower pricing possible depending on usage and market conditions.</p>
+        </article>
+        <article class="why-compact-card">
+          <h3>Future rate protection</h3>
+          <p>Qualified businesses can lock rates up to 5 years in advance to help protect against inflation and energy price increases.</p>
+        </article>
+        <article class="why-compact-card">
+          <h3>1 month to 5 years</h3>
+          <p>Flexible commercial contract terms allow businesses to choose short-term flexibility or long-term stability.</p>
+        </article>
+        <article class="why-compact-card">
+          <h3>No unnecessary contract breaking</h3>
+          <p>We only recommend breaking contracts when savings clearly outweigh early termination fees.</p>
+        </article>
+        <article class="why-compact-card">
+          <h3>Business + home savings</h3>
+          <p>Qualified business owners may be able to add their home to competitive commercial pricing.</p>
+        </article>
+        <article class="why-compact-card">
+          <h3>Local bilingual support</h3>
+          <p>English and Spanish support for Texas businesses, homeowners, contractors, and property managers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section class="strategy-section" id="energy-strategy">
+  <section class="success-stories" id="success-stories">
   <div class="container">
-    <div class="strategy-header">
-      <p class="section-kicker">Commercial Energy Strategy / Estrategia Comercial</p>
-      <h2 class="section-title">Flexible contracts. Future rate protection. Honest recommendations.</h2>
+    <div class="stories-header">
+      <p class="section-kicker">Real Texas Businesses</p>
+      <h2 class="section-title">Success Stories</h2>
       <p>
-        Integrid Energy helps business owners plan ahead instead of reacting at the last minute.
-        Our goal is to protect your business from rising energy costs while keeping your contract strategy simple and transparent.
+        Real businesses across Texas are lowering electricity costs with Integrid Energy.
       </p>
     </div>
 
-    <div class="strategy-grid">
-      <article class="strategy-card">
-        <span class="mini-label">Flexible Terms</span>
-        <h3>1 month to 5 year contract options</h3>
-        <p>
-          Business owners can choose electricity contract options from 1 month up to 5 years,
-          depending on their goals, usage, timing, and market conditions.
-        </p>
-        <p>
-          Opciones flexibles de contrato desde 1 mes hasta 5 años para negocios en Texas.
-        </p>
+    <div class="stories-grid">
+
+      <article class="story-card">
+        <div class="story-image-wrap">
+          <img src="images/childrens-therapy-world.jpg" alt="Children's Therapy World">
+          
+        </div>
+        <div class="story-content">
+          <h3>Children's Therapy World</h3>
+          <p>Reduced electricity costs from a potential 12.9¢ contract down to 7.9¢.</p>
+          <div class="story-savings">
+            <div>
+              <span>Monthly Savings</span>
+              <strong>$300</strong>
+            </div>
+            <div>
+              <span>Yearly Savings</span>
+              <strong>$3,600</strong>
+            </div>
+          </div>
+          <blockquote>
+            “I’m saving around $300 every month and can reinvest those savings back into my business.”
+          </blockquote>
+        </div>
       </article>
 
-      <article class="strategy-card featured">
-        <span class="mini-label">Future Protection</span>
-        <h3>Lock in 7.9¢ up to 5 years in advance</h3>
-        <p>
-          Qualified businesses may be able to secure the 7.9¢ commercial rate up to 5 years before their current contract expires,
-          helping protect against inflation and rising energy prices.
-        </p>
-        <p>
-          Protege tu negocio contra aumentos futuros de energía con planificación anticipada.
-        </p>
+      <article class="story-card">
+        <div class="story-image-wrap">
+          <img src="images/new-horizons.jpg" alt="New Horizons Family Dentistry">
+          
+        </div>
+        <div class="story-content">
+          <h3>New Horizons Family Dentistry</h3>
+          <p>Locked in a 7.9¢ commercial electricity rate across multiple locations.</p>
+          <div class="story-savings">
+            <div>
+              <span>Monthly Savings</span>
+              <strong>$950</strong>
+            </div>
+            <div>
+              <span>Yearly Savings</span>
+              <strong>$11,400</strong>
+            </div>
+          </div>
+          <blockquote>
+            “Integrid Energy helped us secure long-term pricing stability across all locations.”
+          </blockquote>
+        </div>
       </article>
 
-      <article class="strategy-card">
-        <span class="mini-label">Integrity First</span>
-        <h3>No unnecessary contract breaking</h3>
-        <p>
-          We do not recommend breaking existing contracts unless the savings significantly outweigh early termination fees.
-          The goal is long-term value, not unnecessary contract changes.
-        </p>
-        <p>
-          Recomendaciones honestas, claras y enfocadas en el beneficio real del cliente.
-        </p>
+      <article class="story-card">
+        <div class="story-image-wrap">
+          <img src="images/spineworks.jpg" alt="Spineworks Chiropractic">
+          
+        </div>
+        <div class="story-content">
+          <h3>Spineworks Chiropractic</h3>
+          <p>Secured a long-term fixed electricity rate before future market increases.</p>
+          <div class="story-savings">
+            <div>
+              <span>Monthly Savings</span>
+              <strong>$280</strong>
+            </div>
+            <div>
+              <span>Yearly Savings</span>
+              <strong>$3,360</strong>
+            </div>
+          </div>
+          <blockquote>
+            “I’m saving both at my office and at my home thanks to Integrid Energy.”
+          </blockquote>
+        </div>
       </article>
-    </div>
 
-    <div class="owner-perk-banner">
-      <div>
-        <h3>Save on your business. Save at home too.</h3>
-        <p>
-          Qualified business owners may also be able to add their home electricity account to the same competitive commercial pricing —
-          helping them save both at work and at home.
-        </p>
-      </div>
-      <a class="btn" href="#quote">Check Eligibility</a>
-    </div>
+      <article class="story-card">
+        <div class="story-image-wrap">
+          <img src="images/tnt-automotive.jpg" alt="TNT Automotive Specialist">
+          
+        </div>
+        <div class="story-content">
+          <h3>TNT Automotive Specialist</h3>
+          <p>Reduced electricity costs by more than 50% while improving account setup support.</p>
+          <div class="story-savings">
+            <div>
+              <span>Monthly Savings</span>
+              <strong>$380</strong>
+            </div>
+            <div>
+              <span>Yearly Savings</span>
+              <strong>$4,560</strong>
+            </div>
+          </div>
+          <blockquote>
+            “Integrid Energy saved us more than 50% and simplified the process.”
+          </blockquote>
+        </div>
+      </article>
 
-    <div class="strategy-note">
-      Note: Eligibility, rates, terms, and residential add-on options depend on usage, service area, meter type, supplier approval, and market conditions.
     </div>
   </div>
 </section>
 
+  <section class="residential-compact" id="residential-fixed-rate">
+    <div class="container residential-compact-box">
+      <div>
+        <p class="section-kicker">Residential Electricity / Electricidad Residencial</p>
+        <h2 class="section-title">Residential fixed rates around 12¢.</h2>
+        <p>Simple all-in residential pricing with energy charge and TDU included. No credit check. No deposit. 1 to 3 year agreements available.</p>
+        <ul>
+          <li>Around 12¢ all-in</li>
+          <li>Energy + TDU included</li>
+          <li>No credit check</li>
+          <li>No deposit</li>
+          <li>$50 referral reward</li>
+        </ul>
+      </div>
+      <a class="btn btn-orange" href="#quote">Get Residential Quote</a>
+    </div>
+  </section>
 
-<section class="quote-form-section" id="quote">
+  <section class="quote-form-section" id="quote">
       <div class="container quote-form-wrap">
         <div class="quote-info">
           <p class="section-kicker" style="color:#ffb166;">Free Quote / Cotización Gratis</p>
@@ -2567,103 +2782,17 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
       </div>
     </section>
 
-
-    <section class="conversion-strip">
-      <div class="container">
-        <div>
-          <h2>Have a business electricity bill?</h2>
-          <p>Send it to us for a free comparison. / Envíanos tu factura comercial para una comparación gratis.</p>
-        </div>
-        <a class="btn" href="#quote">Start Free Comparison</a>
+  <section class="final-cta-strip">
+    <div class="container">
+      <div>
+        <h2>Ready for a free electricity comparison?</h2>
+        <p>Send us your bill or request a quote today.</p>
       </div>
-    </section>
+      <a class="btn" href="#quote">Start Free Analysis</a>
+    </div>
+  </section>
+</main>
 
-    <section class="trust-section">
-      <div class="container">
-        <p class="section-kicker">Why Integrid Energy / Por Qué Integrid Energy</p>
-        <h2 class="section-title">Built for Texas businesses, homes, and new projects.</h2>
-        <div class="trust-grid">
-          <div class="trust-card">
-            <h3>Bilingual Support</h3>
-            <p>Clear support in English and Spanish for business owners, homeowners, and contractors.</p>
-            <p>Apoyo claro en inglés y español para negocios, hogares y contratistas.</p>
-          </div>
-          <div class="trust-card">
-            <h3>Commercial Focus</h3>
-            <p>Rate review, renewal planning, and electricity setup support for Texas businesses.</p>
-            <p>Revisión de tarifas, renovaciones y servicio eléctrico para negocios en Texas.</p>
-          </div>
-          <div class="trust-card">
-            <h3>RGV Roots</h3>
-            <p>Based in the Rio Grande Valley and serving customers across the state of Texas.</p>
-            <p>Basados en el Valle del Río Grande y sirviendo a clientes en todo Texas.</p>
-          </div>
-        </div>
-      </div>
-    </section><section class="industries-section">
-      <div class="container">
-        <p class="section-kicker">Industries We Help / Industrias Que Ayudamos</p>
-        <h2 class="section-title">Electricity support for the businesses that keep Texas moving.</h2>
-        <div class="industries-grid">
-          <div class="industry-card"><h3>Restaurants</h3><p>High-usage kitchens, coolers, and HVAC needs.</p><p>Restaurantes con alto consumo eléctrico.</p></div>
-          <div class="industry-card"><h3>Retail Stores</h3><p>New locations, expansions, and monthly bill reviews.</p><p>Tiendas, expansiones y revisión de facturas.</p></div>
-          <div class="industry-card"><h3>Warehouses</h3><p>Commercial usage planning and long-term contract strategy.</p><p>Planeación de consumo comercial y contratos.</p></div>
-          <div class="industry-card"><h3>Offices</h3><p>Simple electricity options for professional spaces.</p><p>Opciones simples para oficinas y espacios profesionales.</p></div>
-          <div class="industry-card"><h3>New Construction</h3><p>Support for owners, GCs, and electricians preparing service.</p><p>Apoyo para dueños, contratistas y electricistas.</p></div>
-          <div class="industry-card"><h3>Homeowners</h3><p>Residential electricity options with bilingual guidance.</p><p>Opciones residenciales con apoyo bilingüe.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="city-seo-section">
-      <div class="container">
-        <p class="section-kicker">Service Areas / Áreas de Servicio</p>
-        <h2 class="section-title">Serving the Rio Grande Valley and all Texas.</h2>
-        <div class="city-grid">
-          <a class="city-card" href="commercial-electricity.html"><h3>McAllen</h3><p>Commercial and residential electricity support.</p></a>
-          <a class="city-card" href="commercial-electricity.html"><h3>Edinburg</h3><p>Business electricity and new service setup.</p></a>
-          <a class="city-card" href="commercial-electricity.html"><h3>Mission</h3><p>Electricity plans for homes and businesses.</p></a>
-          <a class="city-card" href="commercial-electricity.html"><h3>Pharr</h3><p>Local electricity support for commercial customers.</p></a>
-          <a class="city-card" href="commercial-electricity.html"><h3>Brownsville</h3><p>Texas energy options with bilingual support.</p></a>
-          <a class="city-card" href="commercial-electricity.html"><h3>Harlingen</h3><p>Commercial electricity guidance and quotes.</p></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-wrap">
-        <div>
-          <p class="section-kicker">Contact Us / Contáctanos</p>
-          <h2 class="section-title">We’re Here to Help<br><span class="orange">Estamos Aquí para Ayudarte</span></h2>
-          <p>Have questions? Let’s find the right electricity solution for you.</p>
-          <p>¿Tienes preguntas? Encontraremos la solución eléctrica adecuada para ti.</p>
-        </div>
-
-        <div class="contact-panel">
-          <a class="contact-tile blue" href="tel:+19568845953">
-            <h3>☎ Call Us / Llámanos</h3>
-            <div class="big">(956)884-5953</div>
-            <p>Serving the Rio Grande Valley & all Texas</p>
-          </a>
-
-          <a class="contact-tile orange" href="mailto:info@integridenergy.com">
-            <h3>✉ Email Us / Escríbenos</h3>
-            <div class="big">info@integridenergy.com</div>
-            <p>We respond within 24 hours. Respondemos dentro de 24 horas.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-  
-    <section class="seo-support" aria-label="Texas electricity service areas">
-      <div class="container">
-        <h2>Texas Electricity Broker Serving Homes and Businesses</h2>
-        <p>Integrid Energy provides commercial and residential electricity support across Texas, including the Rio Grande Valley, McAllen, Edinburg, Mission, Pharr, Brownsville, Harlingen, and surrounding communities. We help business owners, homeowners, contractors, and new construction projects compare electricity options and prepare for service setup.</p>
-        <p>Integrid Energy ofrece apoyo bilingüe para clientes comerciales y residenciales en Texas, incluyendo el Valle del Río Grande. Ayudamos a comparar opciones de electricidad, revisar tarifas y preparar el servicio para negocios, hogares y nuevas construcciones.</p>
-      </div>
-    </section>
-
-  </main>
 
 <section class="residential-rate-section" id="residential-fixed-rate">
   <div class="container">
