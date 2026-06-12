@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,10 +32,53 @@ a{color:var(--blue);font-weight:800}
   }
 }
 
+
+/* Language toggle cleanup */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0,71,171,.08);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  margin-left: 10px;
+}
+.lang-toggle button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 900;
+  cursor: pointer;
+  background: transparent;
+  color: var(--blue);
+}
+.lang-toggle button.active {
+  background: var(--orange);
+  color: white;
+}
+[data-lang="es"] .lang-en { display: none !important; }
+[data-lang="en"] .lang-es { display: none !important; }
+.lang-es { display: none; }
+[data-lang="es"] .lang-es { display: block; }
+[data-lang="es"] .lang-en { display: none; }
+[data-lang="en"] .lang-en { display: block; }
+@media(max-width:920px){
+  .lang-toggle {
+    margin-left: 0;
+  }
+}
+
 </style>
 </head>
 <body>
-<header><div class="container"><a href="index.html">← Back to Integrid Energy</a></div></header>
+<header><div class="container"><a href="index.html">← Back to Integrid Energy</a></div>
+<div class="lang-toggle" aria-label="Language selector">
+  <button type="button" class="active" data-set-lang="en">EN</button>
+  <button type="button" data-set-lang="es">ES</button>
+</div>
+
+</header>
 <main>
 <div class="container card">
 <h1>Terms of Service</h1>
@@ -61,5 +104,24 @@ a{color:var(--blue);font-weight:800}
 <p>Questions can be sent to <a href="mailto:info@integridenergy.com">info@integridenergy.com</a> or by calling <a href="tel:+19568845953">(956) 884-5953</a>.</p>
 </div>
 </main>
+
+<script>
+(function(){
+  const saved = localStorage.getItem('integrid-lang') || 'en';
+  document.documentElement.setAttribute('data-lang', saved);
+  document.querySelectorAll('[data-set-lang]').forEach(function(btn){
+    btn.classList.toggle('active', btn.getAttribute('data-set-lang') === saved);
+    btn.addEventListener('click', function(){
+      const lang = btn.getAttribute('data-set-lang');
+      localStorage.setItem('integrid-lang', lang);
+      document.documentElement.setAttribute('data-lang', lang);
+      document.querySelectorAll('[data-set-lang]').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-set-lang') === lang);
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>

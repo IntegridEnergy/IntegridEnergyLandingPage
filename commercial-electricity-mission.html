@@ -1,8 +1,27 @@
-<!DOCTYPE html><html><head><meta charset="utf-8">
+<!DOCTYPE html><html data-lang="en"><head><meta charset="utf-8">
 <title>Commercial Electricity Mission TX | Integrid Energy</title>
 <meta name="description" content="Commercial electricity brokerage services in Mission, Texas.">
 </head><body>
 <h1>Commercial Electricity in Mission, Texas</h1>
 <p>Integrid Energy helps businesses in Mission compare commercial electricity options, secure rates in the 7¢ range, and plan future contracts.</p>
 <p>Contact: info@integridenergy.com | (956) 884-5953</p>
+
+<script>
+(function(){
+  const saved = localStorage.getItem('integrid-lang') || 'en';
+  document.documentElement.setAttribute('data-lang', saved);
+  document.querySelectorAll('[data-set-lang]').forEach(function(btn){
+    btn.classList.toggle('active', btn.getAttribute('data-set-lang') === saved);
+    btn.addEventListener('click', function(){
+      const lang = btn.getAttribute('data-set-lang');
+      localStorage.setItem('integrid-lang', lang);
+      document.documentElement.setAttribute('data-lang', lang);
+      document.querySelectorAll('[data-set-lang]').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-set-lang') === lang);
+      });
+    });
+  });
+})();
+</script>
+
 </body></html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Residential Electricity Around 12¢ | Integrid Energy Texas</title>
+  <title>Residential Electricity 15¢ or Better | Integrid Energy Texas</title>
   <meta name="description" content="Find residential electricity plans in Texas with Integrid Energy. Fixed rates, fixed-rate options, all-in fixed-rate programs, and bilingual support for homeowners and renters." />
   <meta name="keywords" content="residential electricity Texas, Texas home electricity plans, fixed electricity rate Texas, all-in fixed-rate Texas, fixed-rate electricity Texas, RGV electricity broker" />
   <meta name="author" content="Integrid Energy" />
@@ -1509,6 +1509,43 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
   }
 }
 
+
+/* Language toggle cleanup */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0,71,171,.08);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  margin-left: 10px;
+}
+.lang-toggle button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 900;
+  cursor: pointer;
+  background: transparent;
+  color: var(--blue);
+}
+.lang-toggle button.active {
+  background: var(--orange);
+  color: white;
+}
+[data-lang="es"] .lang-en { display: none !important; }
+[data-lang="en"] .lang-es { display: none !important; }
+.lang-es { display: none; }
+[data-lang="es"] .lang-es { display: block; }
+[data-lang="es"] .lang-en { display: none; }
+[data-lang="en"] .lang-en { display: block; }
+@media(max-width:920px){
+  .lang-toggle {
+    margin-left: 0;
+  }
+}
+
 </style>
 
   <!-- Local business structured data for Google -->
@@ -1691,6 +1728,12 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
       </nav>
 
       <button class="dark-toggle" onclick="document.body.classList.toggle('dark')">☾ Dark Mode</button>
+
+<div class="lang-toggle" aria-label="Language selector">
+  <button type="button" class="active" data-set-lang="en">EN</button>
+  <button type="button" data-set-lang="es">ES</button>
+</div>
+
       <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -1733,10 +1776,10 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
     <div class="container">
       <div class="hero-content">
         <p class="eyebrow">Texas Home Energy • Fixed Rate Options</p>
-        <h1>Residential Fixed Rates Around 12¢ for Texas Homes</h1>
-        <p class="hero-sub"><span>Simple all-in fixed residential electricity rates around 12¢ with energy charge and TDU included.</span></p>
+        <h1>Residential Fixed Rates 15¢ or Better for Texas Homes</h1>
+        <p class="hero-sub"><span>Simple all-in fixed residential electricity rates competitive rates with many homeowners qualifying for 15¢ or better with energy charge and TDU included.</span></p>
         <div class="spanish">
-          <p class="translated-copy">Tarifas residenciales fijas todo incluido alrededor de 12¢ con energía y TDU incluidos.</p>
+          <p class="translated-copy">Tarifas residenciales fijas todo incluido tarifas competitivas y muchos propietarios califican para 15¢ o mejor con energía y TDU incluidos.</p>
         </div>
         <div class="actions">
           <a class="btn btn-blue" href="tel:+19568845953">☎ Call Us / Llámanos</a>
@@ -1748,29 +1791,41 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
 
   <section class="seo-page-content">
     <div class="container page-grid">
+<article class="seo-card">
+<h2>Why Homeowners Choose Fixed Rates</h2>
+<ul>
+<li>Predictable monthly bills</li>
+<li>Protection from market spikes</li>
+<li>Simple pricing</li>
+<li>No credit check</li>
+<li>No deposit</li>
+<li>1–3 year agreements available</li>
+</ul>
+</article>
+
 
 <article class="seo-card">
 <h2>Simple All-In Residential Pricing</h2>
-<p>Integrid Energy offers residential electricity options focused on a simple all-in fixed rate around 12¢.</p>
+<p>Integrid Energy offers residential electricity options focused on a simple all-in fixed rate competitive rates with many homeowners qualifying for 15¢ or better.</p>
 <ul>
 <li>Energy charge included</li>
 <li>TDU delivery included</li>
 <li>No credit check</li>
 <li>No deposit</li>
-<li>No free nights or solar buyback on this residential option</li>
+<li>No  or  on this residential option</li>
 </ul>
 <p>This plan is designed for customers who want clear, predictable pricing without complicated plan structures.</p>
 </article>
 
 <article class="seo-card">
 <h2>Precios Residenciales Todo Incluido</h2>
-<p>Integrid Energy ofrece opciones residenciales con tarifa fija todo incluido alrededor de 12¢.</p>
+<p class="lang-es">Integrid Energy ofrece opciones residenciales con tarifa fija todo incluido tarifas competitivas y muchos propietarios califican para 15¢ o mejor.</p>
 <ul>
 <li>Cargo de energía incluido</li>
 <li>Entrega TDU incluida</li>
 <li>Sin revisión de crédito</li>
 <li>Sin depósito</li>
-<li>Sin noches gratis ni recompra solar en esta opción residencial</li>
+<li>Sin  ni  en esta opción residencial</li>
 </ul>
 <p>Este plan está diseñado para clientes que quieren precios claros, simples y fáciles de entender.</p>
 </article>
@@ -1786,7 +1841,7 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
 </article><article class="seo-card">
 <p class="translated-copy">Te ayudamos a revisar opciones de electricidad para tu casa o apartamento. Explicamos los planes de forma sencilla para que puedas escoger con confianza.</p>
 </article><article class="seo-card"><h2>Residential FAQ</h2>
-<div class="faq-item"><h3>Are free nights or solar buyback included?</h3><p>No. This residential option is focused on a simple all-in fixed rate around 12¢ with energy charge and TDU included.</p></div>
+<div class="faq-item"><h3>Are  or  included?</h3><p>No. This residential option is focused on a simple all-in fixed rate competitive rates with many homeowners qualifying for 15¢ or better with energy charge and TDU included.</p></div>
 
 </article>
 
@@ -1895,6 +1950,25 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
     link.addEventListener('click', function(){
       document.body.classList.remove('menu-open');
       if(btn) btn.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  const saved = localStorage.getItem('integrid-lang') || 'en';
+  document.documentElement.setAttribute('data-lang', saved);
+  document.querySelectorAll('[data-set-lang]').forEach(function(btn){
+    btn.classList.toggle('active', btn.getAttribute('data-set-lang') === saved);
+    btn.addEventListener('click', function(){
+      const lang = btn.getAttribute('data-set-lang');
+      localStorage.setItem('integrid-lang', lang);
+      document.documentElement.setAttribute('data-lang', lang);
+      document.querySelectorAll('[data-set-lang]').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-set-lang') === lang);
+      });
     });
   });
 })();

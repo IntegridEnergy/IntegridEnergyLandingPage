@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -2392,6 +2392,43 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
 .quote-form-section{background:#ffffff!important;}
 .residential-compact{background:#eef5ff!important;}
 
+
+/* Language toggle cleanup */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0,71,171,.08);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  margin-left: 10px;
+}
+.lang-toggle button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 900;
+  cursor: pointer;
+  background: transparent;
+  color: var(--blue);
+}
+.lang-toggle button.active {
+  background: var(--orange);
+  color: white;
+}
+[data-lang="es"] .lang-en { display: none !important; }
+[data-lang="en"] .lang-es { display: none !important; }
+.lang-es { display: none; }
+[data-lang="es"] .lang-es { display: block; }
+[data-lang="es"] .lang-en { display: none; }
+[data-lang="en"] .lang-en { display: block; }
+@media(max-width:920px){
+  .lang-toggle {
+    margin-left: 0;
+  }
+}
+
 </style>
 
   <!-- Local business structured data for Google -->
@@ -2575,6 +2612,12 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
       </nav>
 
       <button class="dark-toggle" onclick="document.body.classList.toggle('dark')">☾ Dark Mode</button>
+
+<div class="lang-toggle" aria-label="Language selector">
+  <button type="button" class="active" data-set-lang="en">EN</button>
+  <button type="button" data-set-lang="es">ES</button>
+</div>
+
       <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -2738,10 +2781,10 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
     <div class="container residential-compact-box">
       <div>
         <p class="section-kicker">Residential Electricity / Electricidad Residencial</p>
-        <h2 class="section-title">Residential fixed rates around 12¢.</h2>
-        <p>All-in residential pricing around 12¢ with energy + TDU included. No credit check, no deposit, 1–3 year agreements.</p>
+        <h2 class="section-title">Residential fixed rates competitive rates with many homeowners qualifying for 15¢ or better.</h2>
+        <p>All-in residential pricing competitive rates with many homeowners qualifying for 15¢ or better with energy + TDU included. No credit check, no deposit, 1–3 year agreements.</p>
         <ul>
-          <li>Around 12¢ all-in</li>
+          <li>15¢ or Better all-in</li>
           <li>Energy + TDU included</li>
           <li>No credit check</li>
           <li>No deposit</li>
@@ -2972,10 +3015,10 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
     <div class="residential-rate-box">
       <div>
         <p class="section-kicker">Residential Electricity / Electricidad Residencial</p>
-        <h2 class="section-title">Simple all-in fixed residential rates around 12¢.</h2>
-        <p>Integrid Energy offers straightforward residential electricity plans with the energy charge and TDU delivery included in one all-in fixed price around 12¢.</p>
+        <h2 class="section-title">Simple all-in fixed residential rates competitive rates with many homeowners qualifying for 15¢ or better.</h2>
+        <p>Integrid Energy offers straightforward residential electricity plans with the energy charge and TDU delivery included in one all-in fixed price competitive rates with many homeowners qualifying for 15¢ or better.</p>
         <p>Agreements are available from 1 to 3 years to help homeowners and renters save long term with predictable pricing.</p>
-        <p>Tarifas residenciales fijas todo incluido alrededor de 12¢, con energía y TDU incluidos, sin revisión de crédito y sin depósito.</p>
+        <p class="lang-es">Tarifas residenciales fijas todo incluido tarifas competitivas y muchos propietarios califican para 15¢ o mejor, con energía y TDU incluidos, sin revisión de crédito y sin depósito.</p>
         <div class="referral-note">$50 Residential Referral Program: Refer another residential customer who signs with Integrid Energy and receive $50.</div>
       </div>
       <div class="residential-rate-card">
@@ -3136,6 +3179,25 @@ body.menu-open .mobile-menu{display:block;animation:mobileDrop .22s ease both;}
     link.addEventListener('click', function(){
       document.body.classList.remove('menu-open');
       if(btn) btn.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  const saved = localStorage.getItem('integrid-lang') || 'en';
+  document.documentElement.setAttribute('data-lang', saved);
+  document.querySelectorAll('[data-set-lang]').forEach(function(btn){
+    btn.classList.toggle('active', btn.getAttribute('data-set-lang') === saved);
+    btn.addEventListener('click', function(){
+      const lang = btn.getAttribute('data-set-lang');
+      localStorage.setItem('integrid-lang', lang);
+      document.documentElement.setAttribute('data-lang', lang);
+      document.querySelectorAll('[data-set-lang]').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-set-lang') === lang);
+      });
     });
   });
 })();
