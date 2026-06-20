@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Your Electricity Bill | Integrid Energy</title>
+  <meta name="description" content="Upload your electricity bill and get a free cost analysis from Integrid Energy. Commercial and residential electricity options in Texas." />
+  <style>
+    :root {
+      --blue: #0047AB;
+      --blue-dark: #06245c;
+      --orange: #ff6b00;
+      --orange-light: #ff8a1f;
+      --soft: #f4f8ff;
+      --text: #10203f;
+      --muted: #5d6b84;
+      --border: #dce7f7;
+      --card: #ffffff;
+      --shadow: 0 18px 42px rgba(6,27,70,.11);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--soft); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1060px, 92%); margin: auto; }
+    header { background: rgba(255,255,255,.96); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
+    .nav { min-height: 78px; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    .brand { font-weight: 900; color: var(--blue); font-size: 1.2rem; }
+    .nav a { font-weight: 900; }
+    .hero { padding: 68px 0; background: radial-gradient(circle at 15% 20%, rgba(255,107,0,.14), transparent 28%), linear-gradient(135deg, #ffffff, #eef5ff); }
+    .hero-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; align-items: start; }
+    .eyebrow { color: var(--orange); font-weight: 900; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 10px; }
+    h1 { font-size: clamp(3rem, 7vw, 5.3rem); line-height: .94; letter-spacing: -.06em; color: var(--blue-dark); margin: 0 0 18px; }
+    h1 span { color: var(--orange); }
+    .hero p { font-size: 1.15rem; }
+    .trust-list { display: grid; gap: 10px; padding: 0; list-style: none; margin: 26px 0 0; }
+    .trust-list li { background: rgba(0,71,171,.07); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; font-weight: 900; color: var(--blue); }
+    .form-card { background: var(--card); border: 1px solid var(--border); border-radius: 28px; padding: 30px; box-shadow: var(--shadow); }
+    .form-card h2 { margin: 0 0 8px; color: var(--blue); font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.05; }
+    .expectations { display: grid; gap: 8px; margin: 18px 0 22px; }
+    .expectations div { background: rgba(255,107,0,.09); border: 1px solid rgba(255,107,0,.22); border-radius: 12px; padding: 10px 12px; font-weight: 900; }
+    form { display: grid; gap: 15px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .full { grid-column: 1 / -1; }
+    label { display: block; font-weight: 900; color: var(--blue); margin-bottom: 7px; }
+    input, select, textarea { width: 100%; border: 1px solid var(--border); border-radius: 14px; padding: 15px; font-size: 1rem; background: #fff; color: var(--text); }
+    input[type="file"] { padding: 13px; background: #f8fbff; border-style: dashed; }
+    textarea { min-height: 110px; resize: vertical; }
+    .btn { min-height: 58px; border: 0; border-radius: 999px; background: linear-gradient(135deg, var(--orange), var(--orange-light)); color: #fff; font-weight: 900; font-size: 1rem; cursor: pointer; padding: 0 26px; width: 100%; }
+    .note { color: var(--muted); font-size: .92rem; margin: 0; }
+    .section { padding: 56px 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: #fff; border: 1px solid var(--border); border-radius: 22px; padding: 24px; box-shadow: var(--shadow); }
+    .card h3 { color: var(--blue); margin: 0 0 10px; }
+    footer { background: var(--blue-dark); color: #fff; padding: 28px 0; text-align: center; }
+    footer a { color: #fff; font-weight: 900; }
+    .mobile-sticky { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 99; background: var(--blue-dark); padding: 10px; box-shadow: 0 -8px 24px rgba(0,0,0,.18); }
+    .mobile-sticky-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .mobile-sticky a { text-align: center; border-radius: 12px; padding: 13px 8px; font-weight: 900; color: #fff; }
+    .mobile-sticky .call { background: var(--blue); }
+    .mobile-sticky .email { background: var(--orange); }
+    @media (max-width: 920px) {
+      body { padding-bottom: 76px; }
+      .hero { padding: 44px 0; }
+      .hero-grid, .form-grid, .cards { grid-template-columns: 1fr; }
+      .form-card { padding: 22px; border-radius: 22px; }
+      .mobile-sticky { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">Integrid Energy</a>
+      <a href="tel:+19568845953">(956) 884-5953</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Free Electricity Cost Analysis</p>
+          <h1>Upload your <span>electricity bill.</span></h1>
+          <p>Send your bill and Integrid Energy will review your current electricity costs, compare available options, and let you know if there is an opportunity to save.</p>
+          <ul class="trust-list">
+            <li>Commercial rates starting in the 7¢ range</li>
+            <li>Residential rates: many homeowners qualify for 15¢ or better</li>
+            <li>No pressure and no obligation</li>
+            <li>Typical response within 1 business day</li>
+          </ul>
+        </div>
+
+        <div class="form-card">
+          <h2>Request Your Free Analysis</h2>
+          <p class="note">Upload a PDF, screenshot, or photo of your electricity bill.</p>
+          <div class="expectations">
+            <div>Free electricity cost analysis</div>
+            <div>No obligation</div>
+            <div>Reviewed by Integrid Energy</div>
+          </div>
+
+          <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="access_key" value="0afdd778-e679-467d-93ad-5be719ac09d1">
+            <input type="hidden" name="subject" value="New Electricity Bill Upload - Integrid Energy">
+            <input type="checkbox" name="botcheck" style="display:none;">
+            <div class="form-grid">
+              <div><label for="business_name">Business Name</label><input id="business_name" name="business_name" placeholder="Business name or N/A"></div>
+              <div><label for="contact_name">Contact Name</label><input id="contact_name" name="contact_name" placeholder="Your name" required></div>
+              <div><label for="phone">Phone</label><input id="phone" name="phone" placeholder="(956) 884-5953" required></div>
+              <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="name@email.com" required></div>
+              <div><label for="service_type">Service Type</label><select id="service_type" name="service_type" required><option value="">Select one</option><option>Commercial Electricity</option><option>Residential Electricity</option><option>Both Commercial and Residential</option></select></div>
+              <div><label for="current_provider">Current Provider</label><input id="current_provider" name="current_provider" placeholder="Optional"></div>
+              <div class="full"><label for="service_address">Service Address</label><input id="service_address" name="service_address" placeholder="Business or home service address"></div>
+              <div class="full"><label for="bill">Upload Bill</label><input id="bill" name="attachment" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp" required><p class="note">Accepted files: PDF, PNG, JPG, JPEG, WEBP.</p></div>
+              <div class="full"><label for="message">Additional Notes</label><textarea id="message" name="message" placeholder="Tell us anything important about your current contract, renewal date, or goals."></textarea></div>
+            </div>
+            <p class="note">By submitting this form, you agree to be contacted by Integrid Energy regarding electricity options.</p>
+            <button class="btn" type="submit">Upload Bill & Request Analysis</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">What Happens Next</p>
+        <div class="cards">
+          <article class="card"><h3>1. Upload Your Bill</h3><p>Send a recent electricity bill so we can review usage, rate structure, and account details.</p></article>
+          <article class="card"><h3>2. Receive Your Analysis</h3><p>We compare your current pricing against available options and identify potential savings.</p></article>
+          <article class="card"><h3>3. Choose What Works Best</h3><p>No pressure. If savings do not make sense, we will tell you honestly.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Integrid Energy</strong> | Power Through Integrity</p>
+      <p><a href="tel:+19568845953">(956) 884-5953</a> | <a href="mailto:info@integridenergy.com">info@integridenergy.com</a> | <a href="index.html">Back to Website</a></p>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky">
+    <div class="mobile-sticky-inner">
+      <a class="call" href="tel:+19568845953">Call Now</a>
+      <a class="email" href="mailto:info@integridenergy.com">Email Bill</a>
+    </div>
+  </div>
+</body>
+</html>
